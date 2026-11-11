@@ -85,7 +85,7 @@ func _fish_bitten_animation():
 	
 func _get_tile_data():
 	var tileMap = get_parent().find_child("Water")
-	var searchPosition = tileMap.local_to_map(tile_marker.global_position)
+	var searchPosition = tileMap.local_to_map(tileMap.to_local(tile_marker.global_position))
 	var data = tileMap.get_cell_tile_data(searchPosition)
 
 	if data: return data.get_custom_data("type")
