@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://hwkql520awev"]
+
+[ext_resource type="Script" uid="uid://c7sxvg0tr5enf" path="res://target.gd" id="1_e1yvt"]
+[ext_resource type="Texture2D" uid="uid://bk4dbg4f0p7vc" path="res://assets/kenney_crosshair-pack/PNG/Light/crosshair-082.png" id="1_t2jmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1yvt"]
+size = Vector2(45, 45)
+
+[node name="Target" type="Area2D" unique_id=1083073075]
+script = ExtResource("1_e1yvt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1541939023]
+texture = ExtResource("1_t2jmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=273035198]
+shape = SubResource("RectangleShape2D_e1yvt")

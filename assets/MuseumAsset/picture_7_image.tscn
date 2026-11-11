@@ -1,0 +1,48 @@
+[gd_scene format=4 uid="uid://d283onyrvvaeb"]
+
+[ext_resource type="Texture2D" uid="uid://dceg4djcutvhp" path="res://assets/MuseumAsset/pexels-tara-winstead-8850840.jpg" id="1_mr41u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28ufs"]
+resource_name = "Material.004"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_mr41u")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ha0h"]
+_surfaces = [{
+"aabb": AABB(-0.7645174, -0.47176862, 0.0861115, 1.5290326, 0.9435374, 1e-05),
+"format": 34359742465,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgADAAAACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAABAAFAAYABgAHAAQA"),
+"lods": [0.20644246, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQA")],
+"name": "Material.004",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("irwKvq6L8T5YW7A9irwKvqiL8b46W7A9ardDv6iL8b46W7A9ardDv66L8T5YW7A9RLdDPxBPA75YW7A9RLdDP6iL8b46W7A98rsKPqiL8b46W7A98rsKPhBPA75YW7A9RLdDP66L8T5YW7A9RLdDP/QNqD46W7A9YxUJP/QNqD46W7A9YxUJP66L8T5YW7A9u6G6Pq6L8T5YW7A9u6G6PhxPAz46W7A98rsKPhxPAz46W7A98rsKPq6L8T5YW7A9RLdDPyjkLz5YW7A9RLdDP6BF5zw6W7A9YxUJP6BF5zw6W7A9YxUJPyjkLz5YW7A9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ex57s"]
+resource_name = "Plane_040"
+_surfaces = [{
+"aabb": AABB(-0.7645174, -0.47176862, 0.0861115, 1.5290326, 0.9435374, 1e-05),
+"attribute_data": PackedByteArray("zO52P5DGGD3M7nY/syd5P/AW6zyzJ3k/8BbrPJDGGD2SfW0/iacVP5J9bT8exRs/8LFcPx7FGz/wsVw/iacVP5J9bT8y+Qo/kn1tP1WHDT8QYGc/VYcNPxBgZz8y+Qo/PwpzPwCJCD4/CnM/8edzP9AfPD3x53M/0B88PQCJCD6SfW0/XlAQP5J9bT+A3hI/EGBnP4DeEj8QYGc/XlAQPw=="),
+"format": 34359742487,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgADAAAACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAABAAFAAYABgAHAAQA"),
+"lods": [0.20644246, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQA")],
+"material": SubResource("StandardMaterial3D_28ufs"),
+"name": "Material.004",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("irwKvq6L8T5YW7A9irwKvqiL8b46W7A9ardDv6iL8b46W7A9ardDv66L8T5YW7A9RLdDPxBPA75YW7A9RLdDP6iL8b46W7A98rsKPqiL8b46W7A98rsKPhBPA75YW7A9RLdDP66L8T5YW7A9RLdDP/QNqD46W7A9YxUJP/QNqD46W7A9YxUJP66L8T5YW7A9u6G6Pq6L8T5YW7A9u6G6PhxPAz46W7A98rsKPhxPAz46W7A98rsKPq6L8T5YW7A9RLdDPyjkLz5YW7A9RLdDP6BF5zw6W7A9YxUJP6BF5zw6W7A9YxUJPyjkLz5YW7A9/3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6ha0h")
+
+[node name="Picture7Image" type="MeshInstance3D" unique_id=992288985]
+mesh = SubResource("ArrayMesh_ex57s")

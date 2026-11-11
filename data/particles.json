@@ -1,0 +1,414 @@
+{
+  "groups": {
+	"article": {
+	  "label": "Article",
+	  "color": "#8ecbff"
+	},
+	"determiner": {
+	  "label": "Determiner",
+	  "color": "#9fe3ae"
+	},
+	"phrasal_particle": {
+	  "label": "Phrasal particle",
+	  "color": "#ffc98a"
+	}
+  },
+  "particles": {
+	"a": {
+	  "word": "a",
+	  "group": "article",
+	  "meaning": "Use 'a' before one singular noun that starts with a consonant sound. It means one thing, not a specific one.",
+	  "examples": [
+		"I have a cat.",
+		"She wants a drink.",
+        "He is a teacher."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "I saw {blank} dog in the park.",
+		  "choices": ["a", "an", "the"],
+		  "answer": "a",
+		  "hint": "Dog starts with a consonant sound.",
+		  "explain": "'A dog' means one dog, not a specific dog."
+		},
+		{
+		  "sentence": "She is {blank} teacher.",
+		  "choices": ["a", "an", "the"],
+		  "answer": "a",
+		  "hint": "Teacher starts with a consonant sound.",
+		  "explain": "Use 'a' before a consonant sound: a teacher."
+		},
+		{
+		  "sentence": "I need {blank} pen.",
+		  "choices": ["a", "an", "the"],
+		  "answer": "a",
+		  "hint": "Pen starts with a consonant sound.",
+		  "explain": "Use 'a' before a consonant sound: a pen."
+		}
+	  ]
+	},
+	"an": {
+	  "word": "an",
+	  "group": "article",
+	  "meaning": "Use 'an' before one singular noun that starts with a vowel sound.",
+	  "examples": [
+		"I ate an apple.",
+		"She is an artist.",
+        "He has an old bike."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "I ate {blank} apple.",
+		  "choices": ["a", "an", "the"],
+		  "answer": "an",
+		  "hint": "Apple starts with a vowel sound.",
+		  "explain": "Use 'an' before a vowel sound: an apple."
+		},
+		{
+		  "sentence": "She is {blank} artist.",
+		  "choices": ["a", "an", "the"],
+		  "answer": "an",
+		  "hint": "Artist starts with a vowel sound.",
+		  "explain": "Use 'an' before a vowel sound: an artist."
+		},
+		{
+		  "sentence": "He has {blank} old bike.",
+		  "choices": ["a", "an", "the"],
+		  "answer": "an",
+		  "hint": "Old starts with a vowel sound.",
+		  "explain": "Use 'an' before a vowel sound: an old bike."
+		}
+	  ]
+	},
+	"the": {
+	  "word": "the",
+	  "group": "article",
+	  "meaning": "Use 'the' for a specific thing that both people know about. Use it for one unique thing too.",
+	  "examples": [
+		"Please close the door.",
+		"The sun is hot today.",
+        "I saw the dog again."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "Please close {blank} door.",
+		  "choices": ["a", "an", "the"],
+		  "answer": "the",
+		  "hint": "We both know which door.",
+		  "explain": "Use 'the' for a specific door both people know."
+		},
+		{
+		  "sentence": "{blank} sun is hot today.",
+		  "choices": ["a", "an", "the"],
+		  "answer": "the",
+		  "hint": "There is only one sun.",
+		  "explain": "Use 'the' for a unique thing: the sun."
+		},
+		{
+		  "sentence": "I saw {blank} dog again yesterday.",
+		  "choices": ["a", "an", "the"],
+		  "answer": "the",
+		  "hint": "We already know this dog.",
+		  "explain": "Use 'the' when the listener already knows the thing."
+		}
+	  ]
+	},
+	"some": {
+	  "word": "some",
+	  "group": "determiner",
+	  "meaning": "Use 'some' for an amount that is not exact, usually in positive sentences or offers.",
+	  "examples": [
+		"There is some milk in the fridge.",
+		"I bought some apples.",
+        "Would you like some water?"
+	  ],
+	  "practice": [
+		{
+		  "sentence": "There is {blank} milk in the fridge.",
+		  "choices": ["some", "any", "this"],
+		  "answer": "some",
+		  "hint": "This is a positive sentence.",
+		  "explain": "Use 'some' in a positive sentence: some milk."
+		},
+		{
+		  "sentence": "I bought {blank} apples.",
+		  "choices": ["some", "any", "this"],
+		  "answer": "some",
+		  "hint": "This is a positive sentence.",
+		  "explain": "Use 'some' for an inexact amount: some apples."
+		},
+		{
+		  "sentence": "Would you like {blank} water?",
+		  "choices": ["some", "any", "this"],
+		  "answer": "some",
+		  "hint": "This is an offer.",
+		  "explain": "Use 'some' in an offer: some water."
+		}
+	  ]
+	},
+	"any": {
+	  "word": "any",
+	  "group": "determiner",
+	  "meaning": "Use 'any' in questions and negative sentences when the amount is not exact.",
+	  "examples": [
+		"Do you have any pens?",
+		"I don't have any money.",
+        "There isn't any bread left."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "Do you have {blank} pens?",
+		  "choices": ["some", "any", "this"],
+		  "answer": "any",
+		  "hint": "This is a question.",
+		  "explain": "Use 'any' in a question: any pens."
+		},
+		{
+		  "sentence": "I don't have {blank} money.",
+		  "choices": ["some", "any", "this"],
+		  "answer": "any",
+		  "hint": "This is a negative sentence.",
+		  "explain": "Use 'any' in a negative sentence: any money."
+		},
+		{
+		  "sentence": "There isn't {blank} bread left.",
+		  "choices": ["some", "any", "this"],
+		  "answer": "any",
+		  "hint": "This is a negative sentence.",
+		  "explain": "Use 'any' in a negative sentence: any bread."
+		}
+	  ]
+	},
+	"this": {
+	  "word": "this",
+	  "group": "determiner",
+	  "meaning": "Use 'this' to point to one thing that is near you.",
+	  "examples": [
+		"This book is mine.",
+		"Look at this fish!",
+        "I like this song."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "{blank} book is mine.",
+		  "choices": ["this", "these", "those"],
+		  "answer": "this",
+		  "hint": "Book is singular and near.",
+		  "explain": "Use 'this' for one near thing: this book."
+		},
+		{
+		  "sentence": "Look at {blank} fish!",
+		  "choices": ["this", "these", "those"],
+		  "answer": "this",
+		  "hint": "Fish is singular and near.",
+		  "explain": "Use 'this' for one near thing: this fish."
+		},
+		{
+		  "sentence": "I like {blank} song.",
+		  "choices": ["this", "these", "those"],
+		  "answer": "this",
+		  "hint": "Song is singular and near.",
+		  "explain": "Use 'this' for one near thing: this song."
+		}
+	  ]
+	},
+	"up": {
+	  "word": "up",
+	  "group": "phrasal_particle",
+	  "meaning": "Use 'up' after some verbs to show movement to a higher place, or an action becoming complete.",
+	  "examples": [
+		"Please stand up.",
+		"She picked up the bag.",
+        "The balloon went up."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "Please stand {blank}.",
+		  "choices": ["up", "down", "in"],
+		  "answer": "up",
+		  "hint": "Standing moves you higher.",
+		  "explain": "Stand up means move to a standing position."
+		},
+		{
+		  "sentence": "He picked {blank} the toy.",
+		  "choices": ["up", "down", "off"],
+		  "answer": "up",
+		  "hint": "The toy moves higher.",
+		  "explain": "Pick up means lift something."
+		},
+		{
+		  "sentence": "The balloon went {blank} into the sky.",
+		  "choices": ["up", "down", "out"],
+		  "answer": "up",
+		  "hint": "The sky is above you.",
+		  "explain": "Go up means move to a higher place."
+		}
+	  ]
+	},
+	"down": {
+	  "word": "down",
+	  "group": "phrasal_particle",
+	  "meaning": "Use 'down' after some verbs to show movement to a lower place.",
+	  "examples": [
+		"Sit down, please.",
+		"She wrote down the answer.",
+        "The cat jumped down."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "Please sit {blank}.",
+		  "choices": ["up", "down", "out"],
+		  "answer": "down",
+		  "hint": "Sitting moves you lower.",
+		  "explain": "Sit down means move into a sitting position."
+		},
+		{
+		  "sentence": "He put the box {blank} on the floor.",
+		  "choices": ["up", "down", "on"],
+		  "answer": "down",
+		  "hint": "The box moves to the floor.",
+		  "explain": "Put down means place something lower."
+		},
+		{
+		  "sentence": "The cat jumped {blank} from the chair.",
+		  "choices": ["up", "down", "in"],
+		  "answer": "down",
+		  "hint": "The cat moves to the floor.",
+		  "explain": "Jump down means jump to a lower place."
+		}
+	  ]
+	},
+	"in": {
+	  "word": "in",
+	  "group": "phrasal_particle",
+	  "meaning": "Use 'in' after some verbs to show movement inside, or someone entering.",
+	  "examples": [
+		"Come in, please.",
+		"She opened the door and walked in.",
+        "Let me in."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "Please come {blank}.",
+		  "choices": ["in", "out", "up"],
+		  "answer": "in",
+		  "hint": "You enter the room.",
+		  "explain": "Come in means enter."
+		},
+		{
+		  "sentence": "She opened the door and walked {blank}.",
+		  "choices": ["in", "out", "up"],
+		  "answer": "in",
+		  "hint": "She enters the room.",
+		  "explain": "Walk in means walk inside."
+		},
+		{
+		  "sentence": "Let me {blank}.",
+		  "choices": ["in", "out", "on"],
+		  "answer": "in",
+		  "hint": "You want to enter.",
+		  "explain": "Let me in means allow me to enter."
+		}
+	  ]
+	},
+	"out": {
+	  "word": "out",
+	  "group": "phrasal_particle",
+	  "meaning": "Use 'out' after some verbs to show movement away from inside.",
+	  "examples": [
+		"Go out and play.",
+		"He took out his wallet.",
+        "The cat ran out."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "Please go {blank} and play.",
+		  "choices": ["in", "out", "up"],
+		  "answer": "out",
+		  "hint": "You leave the house.",
+		  "explain": "Go out means leave or move outside."
+		},
+		{
+		  "sentence": "He took {blank} his wallet.",
+		  "choices": ["out", "in", "on"],
+		  "answer": "out",
+		  "hint": "The wallet comes from inside.",
+		  "explain": "Take out means remove something."
+		},
+		{
+		  "sentence": "The cat ran {blank}.",
+		  "choices": ["out", "in", "up"],
+		  "answer": "out",
+		  "hint": "The cat leaves the room.",
+		  "explain": "Run out means run outside or away."
+		}
+	  ]
+	},
+	"on": {
+	  "word": "on",
+	  "group": "phrasal_particle",
+	  "meaning": "Use 'on' after some verbs to show something starting, continuing, or being attached.",
+	  "examples": [
+		"Turn on the light.",
+		"Put on your coat.",
+        "The show goes on."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "Please turn {blank} the light.",
+		  "choices": ["on", "off", "up"],
+		  "answer": "on",
+		  "hint": "You want the light to work.",
+		  "explain": "Turn on means start a device."
+		},
+		{
+		  "sentence": "Put {blank} your coat.",
+		  "choices": ["on", "off", "in"],
+		  "answer": "on",
+		  "hint": "You want to wear the coat.",
+		  "explain": "Put on means dress or wear something."
+		},
+		{
+		  "sentence": "The show goes {blank} at seven.",
+		  "choices": ["on", "off", "out"],
+		  "answer": "on",
+		  "hint": "The show continues or starts.",
+		  "explain": "Go on means continue or start."
+		}
+	  ]
+	},
+	"off": {
+	  "word": "off",
+	  "group": "phrasal_particle",
+	  "meaning": "Use 'off' after some verbs to show stopping, separating, or leaving.",
+	  "examples": [
+		"Turn off the TV.",
+		"Take off your shoes.",
+        "The car drove off."
+	  ],
+	  "practice": [
+		{
+		  "sentence": "Please turn {blank} the TV.",
+		  "choices": ["on", "off", "up"],
+		  "answer": "off",
+		  "hint": "You want the TV to stop.",
+		  "explain": "Turn off means stop a device."
+		},
+		{
+		  "sentence": "Take {blank} your shoes.",
+		  "choices": ["on", "off", "in"],
+		  "answer": "off",
+		  "hint": "You want to remove the shoes.",
+		  "explain": "Take off means remove something."
+		},
+		{
+		  "sentence": "The car drove {blank}.",
+		  "choices": ["off", "on", "in"],
+		  "answer": "off",
+		  "hint": "The car leaves.",
+		  "explain": "Drive off means leave."
+		}
+	  ]
+	}
+  }
+}

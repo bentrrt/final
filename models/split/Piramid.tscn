@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dtb6sotrp25xb"]
+
+[ext_resource type="ArrayMesh" uid="uid://dd4pc2slei0kj" path="res://models/split/Piramid.res" id="1_4ncaj"]
+
+[node name="Piramid" type="Node3D" unique_id=1536573872]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=529811787]
+mesh = ExtResource("1_4ncaj")

@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://hwd3rbf7rcsk"]
+
+[ext_resource type="Texture2D" uid="uid://bfmhntjiiyw2b" path="res://assets/MuseumAsset/ColorPaletteMuseum.png" id="1_6nx2d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3trx"]
+resource_name = "Material"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_6nx2d")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ca26y"]
+_surfaces = [{
+"aabb": AABB(-1, -0.2, -1, 2, 0.2, 2),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAgAEAAAABQADAAEAAQAAAAUAAwAGAAIABAACAAYABgADAAUAAAAEAAcABgAHAAQABwAFAAAABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AACAPwAAAAAAAIC/AACAPwAAAAAAAIA/AACAvwAAAAAAAIA/AACAP83MTL4AAIA/AACAvwAAAAAAAIC/AACAP83MTL4AAIC/AACAv83MTL4AAIA/AACAv83MTL4AAIC/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lqnd2"]
+resource_name = "Plane_563"
+_surfaces = [{
+"aabb": AABB(-1, -0.2, -1, 2, 0.2, 2),
+"attribute_data": PackedByteArray("HR4SP7Dm7T0dHhI/EHAFPu9+Dj8QcAU+734OP7Dm7T0dHhI/sObtPe9+Dj+w5u09734OPxBwBT4dHhI/EHAFPh0eEj+w5u09HR4SPxBwBT4dHhI/EHAFPh0eEj+w5u09734OPxBwBT7vfg4/sObtPe9+Dj+w5u09734OPxBwBT7vfg4/sObtPR0eEj+w5u09HR4SP7Dm7T3vfg4/sObtPR0eEj8QcAU+734OPxBwBT7vfg4/EHAFPh0eEj8QcAU+"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_g3trx"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACAPwAAAAAAAIC/AACAPwAAAAAAAIA/AACAvwAAAAAAAIA/AACAvwAAAAAAAIC/AACAP83MTL4AAIC/AACAv83MTL4AAIC/AACAv83MTL4AAIA/AACAP83MTL4AAIA/AACAP83MTL4AAIC/AACAP83MTL4AAIA/AACAPwAAAAAAAIA/AACAPwAAAAAAAIC/AACAv83MTL4AAIA/AACAv83MTL4AAIC/AACAvwAAAAAAAIC/AACAvwAAAAAAAIA/AACAv83MTL4AAIC/AACAP83MTL4AAIC/AACAPwAAAAAAAIC/AACAvwAAAAAAAIC/AACAP83MTL4AAIA/AACAv83MTL4AAIA/AACAvwAAAAAAAIA/AACAPwAAAAAAAIA//3///////7//f///////v/9///////+//3///////7//fwAA////P/9/AAD///8//38AAP///z//fwAA////P////3////+/////f////7////9/////v////3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//////////v/////////+//////////7//////////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ca26y")
+
+[node name="Floor" type="MeshInstance3D" unique_id=1039820749]
+mesh = SubResource("ArrayMesh_lqnd2")

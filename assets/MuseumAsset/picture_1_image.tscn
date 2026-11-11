@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://cfv6k6dc260c7"]
+
+[ext_resource type="Texture2D" uid="uid://dceg4djcutvhp" path="res://assets/MuseumAsset/pexels-tara-winstead-8850840.jpg" id="1_nr7p3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28ufs"]
+resource_name = "Material.004"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_nr7p3")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d76ye"]
+_surfaces = [{
+"aabb": AABB(-1.520904, -1.1252774, 0.078101985, 3.041808, 2.2505548, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Material.004",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("+6zCPxcJkD8N9J89+6zCPxcJkL/v8589+6zCvxcJkL/v8589+6zCvxcJkD8N9J89")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pfc8o"]
+resource_name = "Plane_030"
+_surfaces = [{
+"aabb": AABB(-1.520904, -1.1252774, 0.078101985, 3.041808, 2.2505548, 1e-05),
+"attribute_data": PackedByteArray("NEzAPqwE3z40TMA+opIXP7jmbj2ikhc/uOZuPawE3z4="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_28ufs"),
+"name": "Material.004",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("+6zCPxcJkD8N9J89+6zCPxcJkL/v8589+6zCvxcJkL/v8589+6zCvxcJkD8N9J89/3//f////7//f/9/////v/9//3////+//3//f////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d76ye")
+
+[node name="Picture1Image" type="MeshInstance3D" unique_id=532171389]
+mesh = SubResource("ArrayMesh_pfc8o")

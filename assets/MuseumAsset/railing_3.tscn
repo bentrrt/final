@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://diwuqf52vd23b"]
+
+[ext_resource type="Texture2D" uid="uid://bfmhntjiiyw2b" path="res://assets/MuseumAsset/ColorPaletteMuseum.png" id="1_y8f8b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3trx"]
+resource_name = "Material"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_y8f8b")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b3rye"]
+_surfaces = [{
+"aabb": AABB(-1.0000002, 0, 0.79999924, 2.0000005, 1, 0.20000076),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAwAAAAQAAgAEAAAAAwAFAAEABQABAAIABAAGAAMABQADAAYABgAEAAIAAgAHAAUABgAHAAUAAgAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AgCAPwAAgD/GzEw/8f9/vwAAgD/AzEw/8f9/vwAAAADAzEw/AgCAPwAAgD/6/38/AgCAPwAAAADGzEw/AgCAvwAAgD8AAIA/AgCAPwAAAAD6/38/AgCAvwAAAAAAAIA/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tteel"]
+resource_name = "Cube_282"
+_surfaces = [{
+"aabb": AABB(-1.0000002, 0, 0.79999924, 2.0000005, 1, 0.20000076),
+"attribute_data": PackedByteArray("NFo8PrTVpD54cTc+tNWkPnhxNz7kD6Y+NFo8PuQPpj40Wjw+tNWkPjRaPD601aQ+NFo8PuQPpj40Wjw+5A+mPnhxNz601aQ+NFo8PrTVpD40Wjw+5A+mPnhxNz7kD6Y+NFo8PuQPpj40Wjw+5A+mPnhxNz7kD6Y+eHE3PuQPpj4h4lk+uO2ePmX5VD647Z4+ZflUPrjtnj4h4lk+uO2ePnhxNz601aQ+eHE3PrTVpD54cTc+5A+mPnhxNz7kD6Y+"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_g3trx"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AgCAPwAAgD/GzEw/8f9/vwAAgD/AzEw/8f9/vwAAAADAzEw/AgCAPwAAAADGzEw/AgCAPwAAgD/6/38/AgCAPwAAgD/GzEw/AgCAPwAAAADGzEw/AgCAPwAAAAD6/38/AgCAvwAAgD8AAIA/AgCAPwAAgD/6/38/AgCAPwAAAAD6/38/AgCAvwAAAAAAAIA/AgCAPwAAAAD6/38/AgCAPwAAAADGzEw/8f9/vwAAAADAzEw/AgCAvwAAAAAAAIA/AgCAPwAAgD/6/38/AgCAvwAAgD8AAIA/8f9/vwAAgD/AzEw/AgCAPwAAgD/GzEw/AgCAvwAAgD8AAIA/8f9/vwAAgD/AzEw/8f9/vwAAAADAzEw/AgCAvwAAAAAAAIA////+//7//z////7//v//P////v/+//8////+//7//z////9/////v////3////+/////f////7////9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f///////v/9///////+//3///////7//f///////v/7//3////8//v//f////z/+//9/////P/7//3////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b3rye")
+
+[node name="Railing3" type="MeshInstance3D" unique_id=453770006]
+mesh = SubResource("ArrayMesh_tteel")

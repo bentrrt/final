@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cqrt3wl2ve3c"]
+
+[ext_resource type="ArrayMesh" uid="uid://bahppguf5gjl0" path="res://models/split/WallSmall2.res" id="1_ye7hc"]
+
+[node name="WallSmall2" type="Node3D" unique_id=1679664336]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=627380308]
+mesh = ExtResource("1_ye7hc")

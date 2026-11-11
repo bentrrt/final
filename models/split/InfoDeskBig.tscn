@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bycpmqai4parq"]
+
+[ext_resource type="ArrayMesh" uid="uid://bms7pgxagj0ud" path="res://models/split/InfoDeskBig.res" id="1_63myq"]
+
+[node name="InfoDeskBig" type="Node3D" unique_id=1863965816]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=523860907]
+mesh = ExtResource("1_63myq")

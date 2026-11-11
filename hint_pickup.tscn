@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://uwk22fyq7tj5"]
+
+[ext_resource type="Script" uid="uid://b5dal512oov78" path="res://attatch_hint.gd" id="1_bvrta"]
+[ext_resource type="ArrayMesh" uid="uid://dw6hjpchjmqyu" path="res://models/split/Sculpture1.res" id="1_tpbo5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yo5px"]
+radius = 1.0
+
+[node name="HintPickup" type="Node3D" unique_id=1635894469]
+transform = Transform3D(0.99994516, 0, 0.010471812, 0, 1, 0, -0.010471812, 0, 0.99994516, 0, 0, 0)
+script = ExtResource("1_bvrta")
+
+[node name="InteractionZone" type="Area3D" parent="." unique_id=193661198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06389856, -0.5772501, -0.10828512)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionZone" unique_id=468549728]
+shape = SubResource("SphereShape3D_yo5px")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=420080842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06389856, 0, -0.10828513)
+mesh = ExtResource("1_tpbo5")

@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://c7sukyfcglmy3"]
+
+[ext_resource type="Script" uid="uid://bjg64clm3470j" path="res://Mueseum_1.gd" id="1_i1ade"]
+[ext_resource type="ArrayMesh" uid="uid://bdb7lirsxdrg4" path="res://models/split/Floor1.res" id="2_4vfrj"]
+[ext_resource type="PackedScene" uid="uid://dyvt2vtvij8rw" path="res://assets/MuseumAsset/barrier.tscn" id="3_vc7kr"]
+[ext_resource type="PackedScene" uid="uid://ekon1iuuij0k" path="res://models/split/Arch1.tscn" id="4_xvi41"]
+[ext_resource type="Script" uid="uid://dqj2goq75xu01" path="res://ClickToMove.gd" id="5_4ocd4"]
+[ext_resource type="PackedScene" uid="uid://crwa7ohtj2u04" path="res://NPC.tscn" id="6_nln4h"]
+[ext_resource type="Script" uid="uid://x6xanld8nqun" path="res://ShowInteraction.gd" id="7_ohafj"]
+[ext_resource type="Script" uid="uid://bcjr0g5ekg4bl" path="res://interaction_ui.gd" id="8_245u8"]
+[ext_resource type="PackedScene" uid="uid://uwk22fyq7tj5" path="res://hint_pickup.tscn" id="9_1erce"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gl8xe"]
+vertices = PackedVector3Array(-12.460001, 1.0462792, -9.664, -12.460001, 1.0462792, 9.586, 12.539999, 1.0462792, 9.586, 12.539999, 1.0462792, -9.664)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 0.01
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajysn"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mrsdc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yo5px"]
+
+[sub_resource type="Animation" id="Animation_4uil2"]
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-10.919287, -0.0005, 0, 0.0005, 0, 15.232892, -1.4866667, -4.358697, 0, 0),
+"times": PackedFloat32Array(0, 8.92)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(12.306387, -0.0005, 0, 0.0005, 0, 11.319296, -1.4866667, 0.16451518, 0, 0),
+"times": PackedFloat32Array(0, 8.92)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(13.156698, -0.0005, 0, 0.0005, 0, -17.700445, -1.4866667, 5.142857, 0, 0),
+"times": PackedFloat32Array(0, 8.92)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-0.5000003, -0.0005, 0, 0.0005, 0, -0.6134463, -1.4866667, 0.018907666, 0, 0),
+"times": PackedFloat32Array(0, 8.92)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-0.6213746, -0.0005, 0, 0.0005, 0, 2.3544154, -1.4866667, -0.495965, 0, 0),
+"times": PackedFloat32Array(0, 8.92)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubViewportContainer/SubViewport/Camera3D:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, 0, -1.4866667, 0, 0, 0),
+"times": PackedFloat32Array(0, 8.92)
+}
+
+[sub_resource type="Animation" id="Animation_vyey2"]
+resource_name = "intro"
+length = 10.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g2t6n"]
+_data = {
+&"RESET": SubResource("Animation_4uil2"),
+&"intro": SubResource("Animation_vyey2")
+}
+
+[node name="Node3D" type="Node3D" unique_id=1175798243]
+script = ExtResource("1_i1ade")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1981011802]
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.34850606, -0.16422933, 0.92280674, -0.35852975, 0.88630056, 0.2931343, -0.63814545, 10.379715, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=825588246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.50190616, 7)
+size = Vector3(3, 0.001, 7)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2055835498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4995, -6)
+size = Vector3(26, 0.001, 20)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="CSGBox3D" unique_id=1620730254]
+transform = Transform3D(1, 0, 0, 0, 0.058205247, 0, 0, 0, 1, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_gl8xe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBox3D/NavigationRegion3D" unique_id=383533258]
+transform = Transform3D(12.960001, 0, 0, 0, 1, 0, 0, 0, 10.164, 0, 0.026279211, 0)
+mesh = ExtResource("2_4vfrj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D/NavigationRegion3D/MeshInstance3D" unique_id=857916319]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=156958211]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_ajysn")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1237521054]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, -0.50190616, 12.020914)
+size = Vector3(3, 0.001, 41.091553)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1106694369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.869926, 1.0289448, -6.0216455)
+size = Vector3(0.359, 3, 20)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=2086698569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.837452, 1.0289448, -6.0216455)
+size = Vector3(0.359, 3, 20)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=162094002]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.16254807, 1.028945, -16.021645)
+size = Vector3(0.359, 3, 26)
+
+[node name="Barrier" parent="." unique_id=1348065685 instance=ExtResource("3_vc7kr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.289336, -0.49213487, -1.7937441)
+
+[node name="Barrier2" parent="." unique_id=187919096 instance=ExtResource("3_vc7kr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4835954, -0.47667038, -1.7625713)
+
+[node name="Arch1" parent="." unique_id=2087183217 instance=ExtResource("4_xvi41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47466296, 4)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=719514325 groups=["player"]]
+script = ExtResource("5_4ocd4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=187140366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57494557, 0)
+mesh = SubResource("CapsuleMesh_mrsdc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1788492992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5995326, 0)
+shape = SubResource("CapsuleShape3D_yo5px")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D" unique_id=560184548]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=55244905 groups=["Camera"]]
+transform = Transform3D(0.73641497, -0.49742034, 0.4585477, 0, 0.67779356, 0.7352523, -0.6765301, -0.54145086, 0.49913728, 8.78247, 11.514473, 3.4902096)
+
+[node name="npc" parent="." unique_id=911875407 instance=ExtResource("6_nln4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5720048, 0)
+script = ExtResource("7_ohafj")
+
+[node name="InteractionUI" type="CanvasLayer" parent="." unique_id=1724486145]
+script = ExtResource("8_245u8")
+
+[node name="PromptLabel" type="Label" parent="InteractionUI" unique_id=1051480725]
+offset_right = 352.0
+offset_bottom = 203.0
+text = "HELLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintPickup" parent="." unique_id=1635894469 instance=ExtResource("9_1erce")]
+transform = Transform3D(0.99994516, 0, 0.010471812, 0, 1, 0, -0.010471812, 0, 0.99994516, -2, 0.25830412, -8)
+
+[node name="3dMenu" type="Node3D" parent="." unique_id=557451718]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="3dMenu" unique_id=1972383315]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="3dMenu/SubViewportContainer" unique_id=2065362992]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="3dMenu/SubViewportContainer/SubViewport" unique_id=1667274826]
+transform = Transform3D(0.813079, 0.27909935, -0.51088756, 0, 0.87758243, 0.4794258, 0.5821534, -0.38981104, 0.71354383, -10.919287, 12.306387, 13.156698)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="3dMenu" unique_id=1312327600]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -33.0
+offset_right = 35.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button1" type="Button" parent="3dMenu/VBoxContainer" unique_id=310379889]
+layout_mode = 2
+text = "Practice"
+
+[node name="Button2" type="Button" parent="3dMenu/VBoxContainer" unique_id=508318507]
+layout_mode = 2
+text = "Lesson"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=433047496]
+root_node = NodePath("../3dMenu")
+libraries/ = SubResource("AnimationLibrary_g2t6n")
+autoplay = &"RESET"

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://crev2inf1u6xe"]
+
+[node name="MainMenu" type="Node2D" unique_id=372041290]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1901472925]
+
+[node name="PracticeButton" type="Button" parent="CanvasLayer" unique_id=1695043062]
+offset_left = 106.0
+offset_top = 87.0
+offset_right = 176.0
+offset_bottom = 118.0
+text = "Practice"
+
+[node name="LessonButton" type="Button" parent="CanvasLayer" unique_id=396316510]
+offset_left = 75.0
+offset_top = 35.0
+offset_right = 83.0
+offset_bottom = 43.0
+text = "Lesson"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=911885255]
+offset_left = 123.0
+offset_top = 290.0
+offset_right = 288.0
+offset_bottom = 313.0
+text = "GET ME OUT OF HERE"

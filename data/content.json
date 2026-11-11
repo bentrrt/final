@@ -1,0 +1,27 @@
+{
+  "passages": {
+	"reading_1": {
+	  "title": "The Secret Language of Bees",
+	  "paragraphs": {
+		"A": "Honeybees live in colonies of up to fifty thousand individuals...",
+		"B": "When a forager finds food, she returns to the hive and performs a figure-eight movement known as the waggle dance..."
+	  }
+	}
+  },
+  "questions": [
+	{
+	  "id": "q1",
+	  "passage": "reading_1",
+	  "type": "tfng",
+	  "text": "Bees use movement to share the location of food.",
+	  "answer": "TRUE",
+	  "hint_ids": ["brochure_bees"]
+	}
+  ],
+  "hints": {
+	"brochure_bees": {
+	  "title": "Museum brochure",
+	  "text": "Look at paragraph B. How does the forager tell the others where the food is?"
+	}
+  }
+}

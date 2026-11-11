@@ -1,0 +1,94 @@
+{
+  "levels": [
+    {
+      "id": "l1",
+      "title": "Level 1: Where is it?",
+      "skill": "prepositions",
+      "board": 8,
+      "ships": [2, 3, 3],
+      "tts_rate": 0.9,
+      "landmarks": [
+        {
+          "id": "grey_wreck",
+          "name": "grey wreck",
+          "world": [1050, 160],
+          "color": "#d9d9d9"
+        },
+        {
+          "id": "white_wreck",
+          "name": "white wreck",
+          "world": [1090, 520],
+          "color": "#f2f2f2"
+        },
+        {
+          "id": "rocks",
+          "name": "rocks",
+          "world": [1410, 360],
+          "color": "#9fb3c8"
+        },
+        {
+          "id": "small_rocks",
+          "name": "small rocks",
+          "world": [1080, 205],
+          "color": "#b7c3cf"
+        },
+        {
+          "id": "island",
+          "name": "island",
+          "world": [700, 300],
+          "color": "#7fc97f"
+        }
+      ],
+      "blocked_rects": [
+        [300, 40, 500, 510]
+      ],
+      "vocab": [
+        {
+          "word": "above",
+          "say": "above",
+          "meaning": "higher than the landmark"
+        },
+        {
+          "word": "below",
+          "say": "below",
+          "meaning": "lower than the landmark"
+        },
+        {
+          "word": "to the left of",
+          "say": "to the left of",
+          "meaning": "on the left side"
+        },
+        {
+          "word": "to the right of",
+          "say": "to the right of",
+          "meaning": "on the right side"
+        },
+        {
+          "word": "between",
+          "say": "between",
+          "meaning": "in the middle of two landmarks"
+        },
+        {
+          "word": "wreck",
+          "say": "wreck",
+          "meaning": "a broken ship"
+        },
+        {
+          "word": "rocks",
+          "say": "rocks",
+          "meaning": "stones in the sea"
+        },
+        {
+          "word": "small rocks",
+          "say": "small rocks",
+          "meaning": "the stones beside the grey wreck"
+        },
+        {
+          "word": "island",
+          "say": "island",
+          "meaning": "land inside the sea"
+        }
+      ]
+    }
+  ]
+}

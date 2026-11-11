@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d1dcvw2o1ndj0"]
+
+[ext_resource type="ArrayMesh" uid="uid://ddk3rbuukgto7" path="res://models/split/Barrier.res" id="1_7ufln"]
+
+[node name="Barrier" type="Node3D" unique_id=1813453940]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1155966872]
+mesh = ExtResource("1_7ufln")

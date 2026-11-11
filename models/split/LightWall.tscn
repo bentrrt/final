@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d16s6wio1has5"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnau5vnx22nu8" path="res://models/split/LightWall.res" id="1_4i3i3"]
+
+[node name="LightWall" type="Node3D" unique_id=2043326946]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=249999391]
+mesh = ExtResource("1_4i3i3")

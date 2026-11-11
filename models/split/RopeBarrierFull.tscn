@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c4740djui73wx"]
+
+[ext_resource type="ArrayMesh" uid="uid://bm7pse7peekh1" path="res://models/split/RopeBarrierFull.res" id="1_hcc4e"]
+
+[node name="RopeBarrierFull" type="Node3D" unique_id=2021923372]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1650816696]
+mesh = ExtResource("1_hcc4e")

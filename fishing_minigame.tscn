@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://ouffowksua5x"]
+
+[ext_resource type="Texture2D" uid="uid://byl5pqjb27jra" path="res://assets/Basic_GUI_Bundle/BoxesBanners/SVG/Box_Orange_Square.svg" id="1_lmc8y"]
+[ext_resource type="Script" uid="uid://de41f0j4fuxde" path="res://fishing_game.gd" id="1_xd8tf"]
+[ext_resource type="Texture2D" uid="uid://de4nhajs1ffv" path="res://assets/Basic_GUI_Bundle/Sliders/SlimSlider_Background.png" id="2_edgh5"]
+[ext_resource type="PackedScene" uid="uid://do8d6ro7xpye0" path="res://fish.tscn" id="3_edgh5"]
+[ext_resource type="PackedScene" uid="uid://hwkql520awev" path="res://target.tscn" id="4_ew5m6"]
+[ext_resource type="Texture2D" uid="uid://baenfjpg8kfdo" path="res://assets/Basic_GUI_Bundle/Sliders/SVG/SlimSlider_Green_Scoller.svg" id="4_l1kbx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edgh5"]
+texture = ExtResource("1_lmc8y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ew5m6"]
+texture = ExtResource("2_edgh5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1kbx"]
+texture = ExtResource("4_l1kbx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awi32"]
+bg_color = Color(0.16470589, 0.34117648, 0.62352943, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="FishingMinigame" type="CanvasLayer" unique_id=599529607]
+process_mode = 3
+
+[node name="FishingGame" type="Control" parent="." unique_id=346498757]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xd8tf")
+
+[node name="PanelContainer" type="PanelContainer" parent="FishingGame" unique_id=657613999]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_edgh5")
+
+[node name="MarginContainer" type="MarginContainer" parent="FishingGame/PanelContainer" unique_id=2079930893]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FishingGame/PanelContainer/MarginContainer" unique_id=679914430]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="FishingGame/PanelContainer/MarginContainer/VBoxContainer" unique_id=65495529]
+layout_mode = 2
+
+[node name="CatchBar" type="ProgressBar" parent="FishingGame/PanelContainer/MarginContainer/VBoxContainer" unique_id=2054038714]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(6, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_ew5m6")
+theme_override_styles/fill = SubResource("StyleBoxTexture_l1kbx")
+show_percentage = false
+
+[node name="AquaContainer" type="PanelContainer" parent="FishingGame/PanelContainer/MarginContainer/VBoxContainer" unique_id=1535557458]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_awi32")
+
+[node name="Fish" parent="FishingGame" unique_id=1123478909 node_paths=PackedStringArray("aquaContainer") instance=ExtResource("3_edgh5")]
+position = Vector2(133.31964, 134.7222)
+aquaContainer = NodePath("../PanelContainer/MarginContainer/VBoxContainer/AquaContainer")
+
+[node name="Target" parent="FishingGame" unique_id=1083073075 instance=ExtResource("4_ew5m6")]
+position = Vector2(139, 139)
+
+[connection signal="target_entered" from="FishingGame/Target" to="FishingGame" method="_on_target_target_entered"]
+[connection signal="target_exited" from="FishingGame/Target" to="FishingGame" method="_on_target_target_exited"]

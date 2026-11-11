@@ -1,0 +1,45 @@
+# Godot 4 editor and import cache
+.godot/
+.import/
+
+# Local editor/tool data
+project_time_tracker.json
+
+# Third-party local AI assistant, not required to run the game
+addons/ziva_agent/
+
+# Export builds and packaged games
+build/
+dist/
+export/
+/android/
+*.apk
+*.aab
+*.pck
+
+# OS and file-manager junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE local settings
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs, crash dumps, and temporary files
+*.log
+crash-*.txt
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# Local secrets and environment files
+.env
+.env.*
+*.secret
+
+# Godot import metadata (*.import) and UID files (*.uid)
+# are intentionally tracked so assets resolve consistently.

@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://bu4q1wbtbekbe"]
+
+[ext_resource type="Script" uid="uid://ujpu7jdqcpmt" path="res://lesson_card.gd" id="1_lesson"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.105882, 0.137255, 0.196078, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.35, 0.55, 0.8, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 12
+
+[node name="LessonCard" type="CanvasLayer" unique_id=390286411]
+process_mode = 3
+layer = 100
+script = ExtResource("1_lesson")
+
+[node name="Root" type="Control" parent="." unique_id=671626483]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Root" unique_id=1909716576]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.0235294, 0.0392157, 0.78)
+
+[node name="Center" type="CenterContainer" parent="Root" unique_id=1077690039]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Root/Center" unique_id=1779706443]
+custom_minimum_size = Vector2(760, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="Root/Center/Panel" unique_id=1028341377]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 28
+
+[node name="VBox" type="VBoxContainer" parent="Root/Center/Panel/Margin" unique_id=1637415748]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="IntroBox" type="VBoxContainer" parent="Root/Center/Panel/Margin/VBox" unique_id=522290141]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Root/Center/Panel/Margin/VBox/IntroBox" unique_id=812534396]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "You caught a particle!"
+horizontal_alignment = 1
+
+[node name="Word" type="Label" parent="Root/Center/Panel/Margin/VBox/IntroBox" unique_id=971233088]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.35, 1)
+theme_override_font_sizes/font_size = 64
+text = "AN"
+horizontal_alignment = 1
+
+[node name="Group" type="Label" parent="Root/Center/Panel/Margin/VBox/IntroBox" unique_id=1743716096]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "ARTICLE"
+horizontal_alignment = 1
+
+[node name="Meaning" type="Label" parent="Root/Center/Panel/Margin/VBox/IntroBox" unique_id=849717146]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Meaning"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Examples" type="Label" parent="Root/Center/Panel/Margin/VBox/IntroBox" unique_id=1931683987]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.82, 0.88, 0.95, 1)
+theme_override_font_sizes/font_size = 18
+text = "Examples"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="Root/Center/Panel/Margin/VBox/IntroBox" unique_id=1191823950]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Practise"
+
+[node name="PracticeBox" type="VBoxContainer" parent="Root/Center/Panel/Margin/VBox" unique_id=641089710]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ProgressLabel" type="Label" parent="Root/Center/Panel/Margin/VBox/PracticeBox" unique_id=289392003]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.78, 1, 1)
+text = "Sentence 1 of 3"
+horizontal_alignment = 1
+
+[node name="Sentence" type="Label" parent="Root/Center/Panel/Margin/VBox/PracticeBox" unique_id=1183325076]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Sentence"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Choices" type="HBoxContainer" parent="Root/Center/Panel/Margin/VBox/PracticeBox" unique_id=1436619832]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="FeedbackLabel" type="Label" parent="Root/Center/Panel/Margin/VBox/PracticeBox" unique_id=968329860]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="Root/Center/Panel/Margin/VBox/PracticeBox" unique_id=324781798]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Next"
+
+[node name="DoneBox" type="VBoxContainer" parent="Root/Center/Panel/Margin/VBox" unique_id=2080198996]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="DoneTitle" type="Label" parent="Root/Center/Panel/Margin/VBox/DoneBox" unique_id=835986909]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 1, 0.7, 1)
+theme_override_font_sizes/font_size = 32
+text = "You learned AN!"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Root/Center/Panel/Margin/VBox/DoneBox" unique_id=1154826929]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Practice complete: 3 / 3"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="Root/Center/Panel/Margin/VBox/DoneBox" unique_id=1716118375]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Back to fishing"

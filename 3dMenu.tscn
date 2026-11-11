@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://c3gpgtd2q7vjt"]
+
+[sub_resource type="Animation" id="Animation_4uil2"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_vyey2"]
+resource_name = "intro"
+length = 10.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g2t6n"]
+_data = {
+&"RESET": SubResource("Animation_4uil2"),
+&"intro": SubResource("Animation_vyey2")
+}
+
+[node name="Node3D" type="Node3D" unique_id=557451718]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1972383315]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2065362992]
+size = Vector2i(1152, 648)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1667274826]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1312327600]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -33.0
+offset_right = 35.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button1" type="Button" parent="VBoxContainer" unique_id=310379889]
+layout_mode = 2
+text = "Practice"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=508318507]
+layout_mode = 2
+text = "Lesson"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=433047496]
+libraries/ = SubResource("AnimationLibrary_g2t6n")
+autoplay = &"intro"

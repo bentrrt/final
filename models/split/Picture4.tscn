@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cnp1m42a656yf"]
+
+[ext_resource type="ArrayMesh" uid="uid://dd3m02nhicbtb" path="res://models/split/Picture4.res" id="1_q8dlc"]
+
+[node name="Picture4" type="Node3D" unique_id=269640654]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=34840425]
+mesh = ExtResource("1_q8dlc")

@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://do8d6ro7xpye0"]
+
+[ext_resource type="Script" uid="uid://outym42orcp7" path="res://fish.gd" id="1_hgn23"]
+[ext_resource type="Texture2D" uid="uid://b67tdvp6xtn16" path="res://assets/SpearFishing Assets Pack/Sprites/Fish1 - 16x16/Orange.png" id="2_6ik3a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oovoc"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vtik"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10mov"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn1kp"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlehx"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgvfm"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ndls"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgahs"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjgvs"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbtcg"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix0rj"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3ly3"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88fb6"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v5cd"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2gqy"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd0vw"]
+atlas = ExtResource("2_6ik3a")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmc8y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oovoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vtik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10mov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn1kp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlehx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgvfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ndls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgahs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjgvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbtcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix0rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3ly3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88fb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v5cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2gqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd0vw")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yo5px"]
+radius = 15.0
+
+[node name="Fish" type="CharacterBody2D" unique_id=1123478909]
+script = ExtResource("1_hgn23")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2060214507]
+position = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lmc8y")
+animation = &"move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1553259664]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_yo5px")
