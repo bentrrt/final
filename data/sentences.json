@@ -1,0 +1,58 @@
+{
+  "levels": [
+    {
+      "id": "l1",
+      "title": "Level 1: Two trains",
+      "rounds": [
+        {
+          "trains": [
+            {
+              "answer": ["The", "train", "is", "late"],
+              "classes": ["article", "noun", "verb", "adjective"],
+              "hint": "Start with the little word, then the naming word.",
+              "explain": "English order is: little word, naming word, action word, describing word."
+            },
+            {
+              "answer": ["She", "has", "a", "cat"],
+              "classes": ["pronoun", "verb", "article", "noun"],
+              "hint": "Who first, then what she does.",
+              "explain": "Who comes before the action, and the object comes after it."
+            }
+          ]
+        },
+        {
+          "trains": [
+            {
+              "answer": ["Put", "the", "box", "down"],
+              "classes": ["verb", "article", "noun", "particle"],
+              "hint": "Action first, then the thing.",
+              "explain": "The action comes first; the object follows it."
+            },
+            {
+              "answer": ["I", "see", "a", "dog"],
+              "classes": ["pronoun", "verb", "article", "noun"],
+              "hint": "Who sees what?",
+              "explain": "Who, then action, then what is seen."
+            }
+          ]
+        },
+        {
+          "trains": [
+            {
+              "answer": ["The", "cat", "is", "small"],
+              "classes": ["article", "noun", "verb", "adjective"],
+              "hint": "Little word, naming word, action word, describing word.",
+              "explain": "This is the same pattern as the first train."
+            },
+            {
+              "answer": ["He", "likes", "the", "train"],
+              "classes": ["pronoun", "verb", "article", "noun"],
+              "hint": "Who likes what?",
+              "explain": "The person comes first, then the action, then the thing."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

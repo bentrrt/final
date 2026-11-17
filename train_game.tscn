@@ -1,3 +1,164 @@
 [gd_scene format=3 uid="uid://btnd06vt6ge4i"]
 
-[node name="Node2D" type="Node2D" unique_id=589199899]
+[ext_resource type="Texture2D" uid="uid://cq55ql4gmx1qd" path="res://assets/Kooky - Pixel Train assets - v0.0.1/railtrack_v1.png" id="1_rail"]
+[ext_resource type="Script" uid="uid://dymh0xnnqndry" path="res://train_game.gd" id="2_script"]
+
+[node name="TrainGame" type="Node2D" unique_id=589199899]
+script = ExtResource("2_script")
+
+[node name="Sky" type="ColorRect" parent="." unique_id=1586421774]
+offset_right = 1914.0
+offset_bottom = 507.0
+color = Color(0.9862035, 0.49781048, 0.22105548, 1)
+
+[node name="Sun" type="Polygon2D" parent="." unique_id=100000004]
+position = Vector2(187, 115)
+color = Color(0.980392, 0.909804, 0.705882, 1)
+polygon = PackedVector2Array(-54, 0, -38, -38, 0, -54, 38, -38, 54, 0, 38, 38, 0, 54, -38, 38)
+
+[node name="DuneNear" type="Polygon2D" parent="." unique_id=100000006]
+position = Vector2(2, -401)
+color = Color(0.7763446, 0.54767233, 0.16601947, 1)
+polygon = PackedVector2Array(0, 830, 63, 818, 157, 800, 239, 812, 360, 820, 572, 787, 760, 825, 1016, 719, 1200, 825, 1456, 713, 1651.3922, 754.72437, 1840, 795, 1920, 820, 1920, 900, 0, 900)
+
+[node name="DuneNear" type="Polygon2D" parent="DuneNear" unique_id=1078920556]
+position = Vector2(2, 82)
+color = Color(0.952941, 0.713725, 0.352941, 1)
+polygon = PackedVector2Array(0, 830, 180, 790, 360, 820, 560, 785, 760, 825, 980, 790, 1200, 825, 1420, 790, 1640, 825, 1840, 795, 1920, 820, 1920, 900, 0, 900)
+
+[node name="DuneNear" type="Polygon2D" parent="DuneNear/DuneNear" unique_id=1142876342]
+position = Vector2(8, -33)
+scale = Vector2(0.9947917, 1)
+color = Color(0.9547021, 0.7194656, 0.36108205, 1)
+polygon = PackedVector2Array(0, 830, 242.26178, 702, 560, 785, 824, 716, 907, 764, 1237.445, 722, 1420, 790, 1490, 716, 1840, 795, 1920, 820, 1920, 900, 616.05316, 900, 0, 900)
+
+[node name="Ground" type="ColorRect" parent="." unique_id=100000007]
+offset_top = 579.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.215686, 0.2, 0.321569, 1)
+
+[node name="Track1" type="Node2D" parent="." unique_id=100000008]
+position = Vector2(0, 520)
+
+[node name="Platform1" type="ColorRect" parent="Track1" unique_id=100000009]
+offset_top = -18.0
+offset_right = 1920.0
+offset_bottom = 6.0
+color = Color(0.980392, 0.909804, 0.705882, 1)
+
+[node name="Rail1" type="Sprite2D" parent="Track1" unique_id=100000010]
+texture_repeat = 2
+scale = Vector2(6, 6)
+texture = ExtResource("1_rail")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 8)
+
+[node name="Label1" type="Label" parent="Track1" unique_id=100000011]
+offset_left = 24.0
+offset_top = -62.0
+offset_right = 220.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 26
+text = "Platform 1"
+
+[node name="Track2" type="Node2D" parent="." unique_id=100000012]
+position = Vector2(0, 720)
+
+[node name="Platform2" type="ColorRect" parent="Track2" unique_id=100000013]
+offset_top = -18.0
+offset_right = 1920.0
+offset_bottom = 6.0
+color = Color(0.980392, 0.909804, 0.705882, 1)
+
+[node name="Rail2" type="Sprite2D" parent="Track2" unique_id=100000014]
+texture_repeat = 2
+scale = Vector2(6, 6)
+texture = ExtResource("1_rail")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 8)
+
+[node name="Label2" type="Label" parent="Track2" unique_id=100000015]
+offset_left = 24.0
+offset_top = -62.0
+offset_right = 220.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 26
+text = "Platform 2"
+
+[node name="Track3" type="Node2D" parent="." unique_id=100000016]
+position = Vector2(0, 920)
+
+[node name="Platform3" type="ColorRect" parent="Track3" unique_id=100000017]
+offset_top = -18.0
+offset_right = 1920.0
+offset_bottom = 6.0
+color = Color(0.980392, 0.909804, 0.705882, 1)
+
+[node name="Rail3" type="Sprite2D" parent="Track3" unique_id=100000018]
+texture_repeat = 2
+scale = Vector2(6, 6)
+texture = ExtResource("1_rail")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 8)
+
+[node name="Label3" type="Label" parent="Track3" unique_id=100000019]
+offset_left = 24.0
+offset_top = -62.0
+offset_right = 220.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 26
+text = "Platform 3"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=100000020]
+visible = false
+
+[node name="Title" type="Label" parent="HUD" unique_id=100000021]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 34
+text = "Sentence Express"
+
+[node name="RoundLabel" type="Label" parent="HUD" unique_id=100000022]
+offset_left = 24.0
+offset_top = 70.0
+offset_right = 420.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 24
+text = "Round 1"
+
+[node name="Feedback" type="Label" parent="HUD" unique_id=100000025]
+offset_left = 24.0
+offset_top = 116.0
+offset_right = 1200.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 24
+
+[node name="StarLabel" type="Label" parent="HUD" unique_id=100000023]
+offset_left = 1660.0
+offset_top = 20.0
+offset_right = 1896.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 24
+text = "Stars: 0"
+horizontal_alignment = 2
+
+[node name="DepartButton" type="Button" parent="HUD" unique_id=100000024]
+offset_left = 1660.0
+offset_top = 980.0
+offset_right = 1896.0
+offset_bottom = 1044.0
+theme_override_font_sizes/font_size = 24
+text = "Depart"
+
+[node name="Stone" type="Polygon2D" parent="." unique_id=658241085]
+position = Vector2(1200.4471, 835.5434)
+scale = Vector2(0.16146263, 0.08799828)
+color = Color(0.50928617, 0.50928617, 0.50928617, 1)
+polygon = PackedVector2Array(-389.3822, 311.9697, -385.20496, 140.70245, -284.95093, 32.093933, -76.0885, 27.916687, 15.811035, 132.34796, 15.811035, 307.79245, -176.29883, 309.77295)
+uv = PackedVector2Array(-389.3822, 311.9697, -385.20496, 140.70245, -284.95093, 32.093933, -76.0885, 27.916687, 15.811035, 132.34796, 11.633789, 270.1972)
