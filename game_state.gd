@@ -78,34 +78,48 @@ func get_group_color(group_id: String) -> Color:
 	var group: Dictionary = groups[group_id]
 	return Color.from_string(String(group.get("color", "#ffffff")), Color.WHITE)
 
-func pick_next_particle() -> Dictionary:
+func pick_particles(count: int) -> Array:
 	var particles := get_particles()
-	if particles.is_empty():
-		return {}
-
-	var ids := particles.keys()
-	ids.shuffle()
+	if particles.is_empty() or count <= 0:
+		return []
 
 	var unlearned: Array = []
-	for particle_id in ids:
-		if not learned_particles.has(String(particle_id)):
-			unlearned.append(particle_id)
+	var learned_ids: Array = []
+	for particle_id in particles.keys():
+		var id := String(particle_id)
+		if learned_particles.has(id):
+			learned_ids.append(id)
+		else:
+			unlearned.append(id)
 
-	var chosen_id := String(ids[0])
-	if not unlearned.is_empty():
-		chosen_id = String(unlearned[0])
-	else:
-		var best_correct := 999999
-		for particle_id in ids:
-			var mastery: Dictionary = particle_mastery.get(String(particle_id), {})
-			var correct := int(mastery.get("correct", 0))
-			if correct < best_correct:
-				best_correct = correct
-				chosen_id = String(particle_id)
+	unlearned.shuffle()
+	learned_ids.sort_custom(_sort_by_correct)
 
-	var particle: Dictionary = particles[chosen_id].duplicate(true)
-	particle["id"] = chosen_id
-	return particle
+	var ordered := unlearned + learned_ids
+	var pick_count := count
+	if pick_count > ordered.size():
+		pick_count = ordered.size()
+
+	var result: Array = []
+	for i in range(pick_count):
+		var chosen_id := String(ordered[i])
+		var particle: Dictionary = particles[chosen_id].duplicate(true)
+		particle["id"] = chosen_id
+		result.append(particle)
+	return result
+
+func _sort_by_correct(a, b) -> bool:
+	return _correct_count(String(a)) < _correct_count(String(b))
+
+func _correct_count(particle_id: String) -> int:
+	var mastery: Dictionary = particle_mastery.get(particle_id, {})
+	return int(mastery.get("correct", 0))
+
+func pick_next_particle() -> Dictionary:
+	var picks := pick_particles(1)
+	if picks.is_empty():
+		return {}
+	return picks[0]
 
 func mark_learned(particle_id: String) -> void:
 	if particle_id.is_empty():

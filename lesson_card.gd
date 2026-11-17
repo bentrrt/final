@@ -27,8 +27,11 @@ var practice_index := 0
 var correct_count := 0
 var answered := false
 var closed := false
+var choice_rng := RandomNumberGenerator.new()
+var last_choice_order := ""
 
 func _ready() -> void:
+	choice_rng.randomize()
 	continue_button.pressed.connect(_start_practice)
 	next_button.pressed.connect(_next_practice)
 	close_button.pressed.connect(_close)
@@ -102,14 +105,38 @@ func _show_practice() -> void:
 	progress_label.text = "Sentence %d of %d" % [practice_index + 1, practice.size()]
 	sentence_label.text = String(current.get("sentence", "")).replace("{blank}", "_____")
 
+	var choices: Array = current.get("choices", []).duplicate()
+	_shuffle_choices(choices)
+
 	_clear_choices()
-	for choice in current.get("choices", []):
+	for choice in choices:
 		var button := Button.new()
 		button.text = String(choice)
 		button.custom_minimum_size = Vector2(130, 52)
 		button.add_theme_font_size_override("font_size", 22)
 		button.pressed.connect(_on_choice.bind(String(choice)))
 		choices_box.add_child(button)
+
+func _shuffle_choices(choices: Array) -> void:
+	if choices.size() < 2:
+		return
+
+	for _attempt in range(6):
+		for i in range(choices.size() - 1, 0, -1):
+			var j := choice_rng.randi_range(0, i)
+			var temp = choices[i]
+			choices[i] = choices[j]
+			choices[j] = temp
+
+		var signature := ""
+		for choice in choices:
+			signature += String(choice) + "|"
+
+		if signature != last_choice_order:
+			last_choice_order = signature
+			return
+
+	last_choice_order = ""
 
 func _on_choice(choice: String) -> void:
 	if answered:
@@ -151,7 +178,6 @@ func _show_done() -> void:
 	var word := String(particle.get("word", "")).to_upper()
 	done_title.text = "You learned %s!" % word
 	score_label.text = "Practice complete: %d / %d" % [correct_count, total]
-	GameState.mark_learned(String(particle.get("id", "")))
 
 func _set_choices_disabled(disabled: bool) -> void:
 	for child in choices_box.get_children():

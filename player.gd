@@ -15,11 +15,16 @@ var startFishing = false
 var waitForFish = false
 var fishBitten = false
 var maxWaitingTime = 4
+var active_minigame_ui: Node = null
 
 func _ready() -> void:
 	waiting.visible = false
 
 func _physics_process(_delta):
+	if get_tree().paused or is_instance_valid(active_minigame_ui):
+		velocity = Vector2.ZERO
+		return
+
 	if startFishing: _fishing_state()
 	else: _move_state()
 
@@ -103,12 +108,15 @@ func _start_mini_game() -> void:
 
 	var minigame := preload("res://fishing_minigame.tscn").instantiate()
 	var game_ui := minigame.get_node("FishingGame")
+	active_minigame_ui = game_ui
 	game_ui.connect("fish_caught", _on_fish_caught)
 	get_tree().current_scene.add_child(minigame)
 
 
 func _on_fish_caught(particle: Dictionary) -> void:
 	if particle.is_empty():
+		if is_instance_valid(active_minigame_ui):
+			active_minigame_ui.call("resume_after_lesson")
 		get_tree().paused = false
 		return
 
@@ -118,6 +126,8 @@ func _on_fish_caught(particle: Dictionary) -> void:
 	lesson.call("start", particle)
 
 func _on_lesson_finished() -> void:
+	if is_instance_valid(active_minigame_ui):
+		active_minigame_ui.call("resume_after_lesson")
 	get_tree().paused = false
 
 func _on_waiting_timer_timeout() -> void:
@@ -127,28 +137,3 @@ func _on_waiting_timer_timeout() -> void:
 	waitForFish = false
 	
 	
-
-
-#
-#func _ready():
-	#animated_sprite.play("Idle")
-#
-#func _physics_process(delta: float) -> void:
-	## 1. Get input vector for all 4 directions (returns a Vector2 between -1 and 1)
-	#var input_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	#
-	## 2. Apply speed to the velocity vector (automatically normalizes diagonals)
-	#velocity = input_vector * SPEED
-#
-	## 3. Handle animations and sprite flipping
-	#if input_vector != Vector2.ZERO:
-		#animated_sprite.play("Walk") # Make sure you have an animation named "Walk"
-		#
-		## Flip the sprite left or right depending on horizontal movement
-		#if input_vector.x != 0:
-			#animated_sprite.flip_h = input_vector.x < 0
-	#else:
-		#animated_sprite.play("Idle")
-#
-	## 4. Move the character smoothly
-	#move_and_slide()

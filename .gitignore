@@ -8,6 +8,9 @@ project_time_tracker.json
 # Third-party local AI assistant, not required to run the game
 addons/ziva_agent/
 
+# Local Godot editor extensions
+addons/script_splitter/
+
 # Export builds and packaged games
 build/
 dist/
