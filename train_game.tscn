@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cq55ql4gmx1qd" path="res://assets/Kooky - Pixel Train assets - v0.0.1/railtrack_v1.png" id="1_rail"]
 [ext_resource type="Script" uid="uid://dymh0xnnqndry" path="res://train_game.gd" id="2_script"]
+[ext_resource type="PackedScene" uid="uid://bk0d703oi6404" path="res://train.tscn" id="3_train"]
 
 [node name="TrainGame" type="Node2D" unique_id=589199899]
 script = ExtResource("2_script")
@@ -55,13 +56,7 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 8)
 
-[node name="Label1" type="Label" parent="Track1" unique_id=100000011]
-offset_left = 24.0
-offset_top = -62.0
-offset_right = 220.0
-offset_bottom = -26.0
-theme_override_font_sizes/font_size = 26
-text = "Platform 1"
+[node name="Train1" parent="Track1" unique_id=14399864 instance=ExtResource("3_train")]
 
 [node name="Track2" type="Node2D" parent="." unique_id=100000012]
 position = Vector2(0, 720)
@@ -80,13 +75,7 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 8)
 
-[node name="Label2" type="Label" parent="Track2" unique_id=100000015]
-offset_left = 24.0
-offset_top = -62.0
-offset_right = 220.0
-offset_bottom = -26.0
-theme_override_font_sizes/font_size = 26
-text = "Platform 2"
+[node name="Train2" parent="Track2" unique_id=1998233452 instance=ExtResource("3_train")]
 
 [node name="Track3" type="Node2D" parent="." unique_id=100000016]
 position = Vector2(0, 920)
@@ -105,16 +94,9 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 8)
 
-[node name="Label3" type="Label" parent="Track3" unique_id=100000019]
-offset_left = 24.0
-offset_top = -62.0
-offset_right = 220.0
-offset_bottom = -26.0
-theme_override_font_sizes/font_size = 26
-text = "Platform 3"
+[node name="Train3" parent="Track3" unique_id=2102698023 instance=ExtResource("3_train")]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=100000020]
-visible = false
 
 [node name="Title" type="Label" parent="HUD" unique_id=100000021]
 offset_left = 24.0

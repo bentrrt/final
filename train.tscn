@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bk0d703oi6404"]
+
+[ext_resource type="Script" uid="uid://2mwtdqi8iwqb" path="res://train.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ciy2e053rk114" path="res://assets/Kooky - Pixel Train assets - v0.0.1/train_v18.png" id="2_loco"]
+[ext_resource type="Texture2D" uid="uid://dpmsq6qco6a5g" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car1.png" id="3_car1"]
+[ext_resource type="Texture2D" uid="uid://cyjw7vs6wewmf" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car2.png" id="4_car2"]
+[ext_resource type="Texture2D" uid="uid://dug5uq5iw3rar" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car3.png" id="5_car3"]
+[ext_resource type="Texture2D" uid="uid://cy5i11lo8wohy" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car4.png" id="6_car4"]
+[ext_resource type="Texture2D" uid="uid://bvhk3biy74x55" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car5.png" id="7_car5"]
+[ext_resource type="Texture2D" uid="uid://dtgr170632ape" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car6.png" id="8_car6"]
+[ext_resource type="Texture2D" uid="uid://b1hvmidcs2b1a" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car7.png" id="9_car7"]
+[ext_resource type="Texture2D" uid="uid://drehlq4p5njbt" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car8.png" id="10_car8"]
+[ext_resource type="Texture2D" uid="uid://vgqw4sn2wb3k" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car9.png" id="11_car9"]
+[ext_resource type="PackedScene" path="res://slot.tscn" id="12_slot"]
+[ext_resource type="PackedScene" path="res://carriage.tscn" id="13_carriage"]
+
+[node name="Train" type="HBoxContainer" unique_id=1046070560]
+offset_left = 60.0
+offset_top = -86.0
+offset_right = 60.0
+offset_bottom = -86.0
+theme_override_constants/separation = 8
+script = ExtResource("1_script")
+carriage_textures = Array[Texture2D]([ExtResource("3_car1"), ExtResource("4_car2"), ExtResource("5_car3"), ExtResource("6_car4"), ExtResource("7_car5"), ExtResource("8_car6"), ExtResource("9_car7"), ExtResource("10_car8"), ExtResource("11_car9")])
+
+[node name="Slot1" parent="." unique_id=2027788146 instance=ExtResource("12_slot")]
+layout_mode = 2
+
+[node name="Carriage" parent="Slot1" unique_id=872197302 instance=ExtResource("13_carriage")]
+anchors_preset = 0
+
+[node name="Slot2" parent="." unique_id=527905947 instance=ExtResource("12_slot")]
+layout_mode = 2
+
+[node name="Carriage" parent="Slot2" unique_id=1191438776 instance=ExtResource("13_carriage")]
+anchors_preset = 0
+
+[node name="Slot3" parent="." unique_id=1170800024 instance=ExtResource("12_slot")]
+layout_mode = 2
+
+[node name="Carriage" parent="Slot3" unique_id=1354419141 instance=ExtResource("13_carriage")]
+anchors_preset = 0
+
+[node name="Slot4" parent="." unique_id=2064217176 instance=ExtResource("12_slot")]
+layout_mode = 2
+
+[node name="Carriage" parent="Slot4" unique_id=131752580 instance=ExtResource("13_carriage")]
+anchors_preset = 0
+
+[node name="Slot5" parent="." unique_id=1353901784 instance=ExtResource("12_slot")]
+layout_mode = 2
+
+[node name="Carriage" parent="Slot5" unique_id=1319112208 instance=ExtResource("13_carriage")]
+anchors_preset = 0
+
+[node name="Loco" type="TextureRect" parent="." unique_id=509598831]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_loco")
