@@ -234,6 +234,11 @@ Example: The train [b]is[/b] late.
 A describing word. It tells what something is like.
 Example: The train is [b]late[/b].
 
+[color=#999999][b]T - Particle[/b][/color]
+A small word that completes a verb phrase.
+Example: Put the box [b]down[/b].
+
+
 [i]Read the example. The bold word is the tag.[/i]"
 
 [node name="Buttons" type="HBoxContainer" parent="HUD/HintOverlay/Wrap/Panel/MarginContainer/VBoxContainer" unique_id=100000040]
