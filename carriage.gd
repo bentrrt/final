@@ -26,11 +26,11 @@ func set_unified(color: Color) -> void:
 
 func class_color(p_class: String) -> Color:
 	match p_class:
-		"article": return Color(0.35, 0.55, 0.95)
-		"noun": return Color(0.35, 0.75, 0.45)
-		"verb": return Color(0.95, 0.55, 0.3)
-		"adjective": return Color(0.7, 0.45, 0.85)
-		"pronoun": return Color(0.95, 0.75, 0.3)
+		"article": return Color("598cff")
+		"noun": return Color("59bf73")
+		"verb": return Color("f28c4d")
+		"adjective": return Color("b373d9")
+		"pronoun": return Color("f2c94d")
 		"particle": return Color(0.6, 0.6, 0.6)
 		_: return Color(0.6, 0.6, 0.6)
 

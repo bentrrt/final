@@ -17,9 +17,17 @@ var hints_used := 0
 @onready var depart_button: Button = $HUD/DepartButton
 @onready var train_nodes: Array = [$Track1/Train1, $Track2/Train2, $Track3/Train3]
 
+@onready var hint_button: Button = $HUD/HintButton
+@onready var hint_overlay: Control = $HUD/HintOverlay
+@onready var hint_dim: ColorRect = $HUD/HintOverlay/Dim
+@onready var hint_close_button: Button = $HUD/HintOverlay/Wrap/Panel/MarginContainer/VBoxContainer/Buttons/CloseButton
+
 func _ready() -> void:
 	data = _load_json(DATA_PATH)
 	depart_button.pressed.connect(_on_depart_pressed)
+	hint_button.pressed.connect(_show_tag_hints)
+	hint_dim.gui_input.connect(_on_hint_dim_input)
+	hint_close_button.pressed.connect(_hide_tag_hints)
 	_start_round()
 
 func _load_json(path: String) -> Dictionary:
@@ -113,3 +121,17 @@ func _next_round() -> void:
 			feedback.text = "Level complete."
 			return
 	_start_round()
+
+func _show_tag_hints() -> void:
+	hint_overlay.visible = true
+
+func _hide_tag_hints() -> void:
+	hint_overlay.visible = false
+
+func _on_hint_dim_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		_hide_tag_hints()
+
+func _input(event: InputEvent) -> void:
+	if hint_overlay != null and hint_overlay.visible and event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		_hide_tag_hints()

@@ -4,6 +4,18 @@
 [ext_resource type="Script" uid="uid://dymh0xnnqndry" path="res://train_game.gd" id="2_script"]
 [ext_resource type="PackedScene" uid="uid://bk0d703oi6404" path="res://train.tscn" id="3_train"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hint_panel"]
+bg_color = Color(0.08, 0.07, 0.13, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.85, 0.72, 0.35, 0.95)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="TrainGame" type="Node2D" unique_id=589199899]
 script = ExtResource("2_script")
 
@@ -137,6 +149,106 @@ offset_right = 1896.0
 offset_bottom = 1044.0
 theme_override_font_sizes/font_size = 24
 text = "Depart"
+
+[node name="HintButton" type="Button" parent="HUD" unique_id=100000030]
+offset_left = 1460.0
+offset_top = 20.0
+offset_right = 1630.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 20
+text = "Hints"
+
+[node name="HintOverlay" type="Control" parent="HUD" unique_id=100000031]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Dim" type="ColorRect" parent="HUD/HintOverlay" unique_id=100000032]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.78)
+
+[node name="Wrap" type="MarginContainer" parent="HUD/HintOverlay" unique_id=100000033]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 1872.0
+offset_bottom = 1032.0
+
+[node name="Panel" type="PanelContainer" parent="HUD/HintOverlay/Wrap" unique_id=100000034]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_hint_panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/HintOverlay/Wrap/Panel" unique_id=100000035]
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 28
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/HintOverlay/Wrap/Panel/MarginContainer" unique_id=100000036]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="HUD/HintOverlay/Wrap/Panel/MarginContainer/VBoxContainer" unique_id=100000037]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Word tags"
+horizontal_alignment = 1
+
+[node name="Intro" type="Label" parent="HUD/HintOverlay/Wrap/Panel/MarginContainer/VBoxContainer" unique_id=100000038]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Each carriage has a roof tag. The letter and colour show the word's job in the sentence."
+autowrap_mode = 3
+
+[node name="HintText" type="RichTextLabel" parent="HUD/HintOverlay/Wrap/Panel/MarginContainer/VBoxContainer" unique_id=100000039]
+custom_minimum_size = Vector2(0, 620)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.94, 0.97, 1, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[color=#598cff][b]A - Article[/b][/color]
+A small word before a naming word. It shows which one or how many.
+Example: [b]The[/b] train is late.
+
+[color=#f2c94d][b]P - Pronoun[/b][/color]
+Pronoun: a word that replaces a naming word.
+Example: [b]She[/b] has a cat.
+
+[color=#59bf73][b]N - Noun[/b][/color]
+A naming word for a person, place, thing, or idea.
+Example: The [b]train[/b] is late.
+
+[color=#f28c4d][b]V - Verb[/b][/color]
+An action or state word. It tells what happens.
+Example: The train [b]is[/b] late.
+
+[color=#b373d9][b]D - Adjective[/b][/color]
+A describing word. It tells what something is like.
+Example: The train is [b]late[/b].
+
+[i]Read the example. The bold word is the tag.[/i]"
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/HintOverlay/Wrap/Panel/MarginContainer/VBoxContainer" unique_id=100000040]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Spacer" type="Control" parent="HUD/HintOverlay/Wrap/Panel/MarginContainer/VBoxContainer/Buttons" unique_id=100000041]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="HUD/HintOverlay/Wrap/Panel/MarginContainer/VBoxContainer/Buttons" unique_id=100000042]
+custom_minimum_size = Vector2(180, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Close"
 
 [node name="Stone" type="Polygon2D" parent="." unique_id=658241085]
 position = Vector2(1200.4471, 835.5434)
