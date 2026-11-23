@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bk0d703oi6404" path="res://train.tscn" id="3_train"]
 [ext_resource type="PackedScene" uid="uid://256lg2yhu1m8" path="res://effects/glowing.tscn" id="4_s0p8f"]
 [ext_resource type="Texture2D" uid="uid://b1o31l3jsxa4a" path="res://assets/Basic_GUI_Bundle/Icons/Icon_Large_StarGrey.png" id="5_star_grey"]
+[ext_resource type="Texture2D" uid="uid://pbqpv56f737a" path="res://assets/Basic_GUI_Bundle/Icons/Icon_Large_Star.png" id="6_star_gold"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hint_panel"]
 bg_color = Color(0.08, 0.07, 0.13, 0.96)
@@ -117,27 +118,49 @@ region_rect = Rect2(0, 0, 320, 8)
 [node name="HUD" type="CanvasLayer" parent="." unique_id=100000020]
 
 [node name="Title" type="Label" parent="HUD" unique_id=100000021]
-offset_left = 24.0
+offset_left = 760.0
 offset_top = 20.0
-offset_right = 420.0
+offset_right = 1160.0
 offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.98, 0.91, 0.706, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
+theme_override_colors/font_outline_color = Color(0.12, 0.08, 0.05, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 34
 text = "Sentence Express"
+horizontal_alignment = 1
 
 [node name="RoundLabel" type="Label" parent="HUD" unique_id=100000022]
-offset_left = 24.0
+offset_left = 760.0
 offset_top = 70.0
-offset_right = 420.0
+offset_right = 1160.0
 offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.92, 0.97, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_colors/font_outline_color = Color(0.12, 0.08, 0.05, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 24
 text = "Round 1"
+horizontal_alignment = 1
 
 [node name="Feedback" type="Label" parent="HUD" unique_id=100000025]
-offset_left = 24.0
+offset_left = 360.0
 offset_top = 116.0
-offset_right = 1200.0
-offset_bottom = 152.0
+offset_right = 1560.0
+offset_bottom = 180.0
+theme_override_colors/font_color = Color(0.98, 0.95, 0.82, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.55)
+theme_override_colors/font_outline_color = Color(0.12, 0.08, 0.05, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="StarContainer" type="HBoxContainer" parent="HUD" unique_id=100000023]
 offset_left = 1600.0
@@ -279,6 +302,81 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(180, 52)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
+text = "Close"
+
+[node name="LevelCompleteOverlay" type="Control" parent="HUD" unique_id=100000050]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="LevelDim" type="ColorRect" parent="HUD/LevelCompleteOverlay" unique_id=100000051]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.78)
+
+[node name="LevelCenter" type="CenterContainer" parent="HUD/LevelCompleteOverlay" unique_id=100000052]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="LevelPanel" type="PanelContainer" parent="HUD/LevelCompleteOverlay/LevelCenter" unique_id=100000053]
+custom_minimum_size = Vector2(600, 320)
+layout_mode = 2
+
+[node name="LevelMargin" type="MarginContainer" parent="HUD/LevelCompleteOverlay/LevelCenter/LevelPanel" unique_id=100000054]
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 28
+
+[node name="LevelVBox" type="VBoxContainer" parent="HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin" unique_id=100000055]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="LevelTitle" type="Label" parent="HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin/LevelVBox" unique_id=100000056]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Level complete"
+horizontal_alignment = 1
+
+[node name="LevelStars" type="HBoxContainer" parent="HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin/LevelVBox" unique_id=100000057]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="LevelStar1" type="TextureRect" parent="HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin/LevelVBox/LevelStars" unique_id=100000058]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("6_star_gold")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LevelStar2" type="TextureRect" parent="HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin/LevelVBox/LevelStars" unique_id=100000059]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("6_star_gold")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LevelStar3" type="TextureRect" parent="HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin/LevelVBox/LevelStars" unique_id=100000060]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("6_star_gold")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LevelNext" type="Button" parent="HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin/LevelVBox" unique_id=100000063]
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 2
+text = "Next"
+
+[node name="LevelClose" type="Button" parent="HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin/LevelVBox" unique_id=100000061]
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 2
 text = "Close"
 
 [node name="Stone" type="Polygon2D" parent="." unique_id=658241085]

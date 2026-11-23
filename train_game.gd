@@ -30,6 +30,9 @@ var star_nodes: Array = []
 @onready var hint_overlay: Control = $HUD/HintOverlay
 @onready var hint_dim: ColorRect = $HUD/HintOverlay/Dim
 @onready var hint_close_button: Button = $HUD/HintOverlay/Wrap/Panel/MarginContainer/VBoxContainer/Buttons/CloseButton
+@onready var level_complete_overlay: Control = $HUD/LevelCompleteOverlay
+@onready var level_next_button: Button = $HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin/LevelVBox/LevelNext
+@onready var level_close_button: Button = $HUD/LevelCompleteOverlay/LevelCenter/LevelPanel/LevelMargin/LevelVBox/LevelClose
 
 func _ready() -> void:
 	data = _load_json(DATA_PATH)
@@ -37,6 +40,8 @@ func _ready() -> void:
 	hint_button.pressed.connect(_show_tag_hints)
 	hint_dim.gui_input.connect(_on_hint_dim_input)
 	hint_close_button.pressed.connect(_hide_tag_hints)
+	level_close_button.pressed.connect(_hide_level_complete)
+	level_next_button.pressed.connect(_on_level_next)
 	star_nodes = [star1, star2, star3]
 	_reset_stars()
 	_start_round()
@@ -115,7 +120,12 @@ func _on_depart_pressed() -> void:
 	else:
 		mistakes += 1
 		var item: Dictionary = trains[first_bad_train].item
-		feedback.text = item.get("hint", "Check the marked car.")
+		var hint_text_value := String(item.get("hint", "Check the marked car."))
+		var explain_text := String(item.get("explain", ""))
+		if explain_text.is_empty():
+			feedback.text = hint_text_value
+		else:
+			feedback.text = hint_text_value + "\n" + explain_text
 		depart_button.disabled = false
 
 func _depart_all() -> void:
@@ -132,21 +142,34 @@ func _finish_depart(train) -> void:
 
 func _next_round() -> void:
 	round_index += 1
-	if round_index >= _level()["rounds"].size():
-		round_index = 0
-		level_index += 1
-		if level_index >= data["levels"].size():
-			feedback.text = "Level complete."
-			return
-		stars = 0
-		_reset_stars()
-	_start_round()
+	if round_index < _level()["rounds"].size():
+		_start_round()
+		return
+	round_index = 0
+	level_index += 1
+	if level_index >= data["levels"].size():
+		feedback.text = "Game complete."
+		level_next_button.disabled = false
+	else:
+		feedback.text = "Level complete."
+		level_next_button.disabled = false
+	level_complete_overlay.visible = true
 
 func _reset_stars() -> void:
 	stars = 0
 	for star_node in star_nodes:
 		star_node.texture = STAR_GREY
 		star_node.scale = Vector2(1.0, 1.0)
+
+func _hide_level_complete() -> void:
+	level_complete_overlay.visible = false
+
+func _on_level_next() -> void:
+	level_complete_overlay.visible = false
+	if level_index < data["levels"].size():
+		stars = 0
+		_reset_stars()
+		_start_round()
 
 func _show_tag_hints() -> void:
 	hint_overlay.visible = true
