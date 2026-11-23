@@ -149,7 +149,7 @@ func _close() -> void:
 	await tween.finished
 	queue_free()
 
-func _on_tarruget_target_entered() -> void:
+func _on_target_target_entered() -> void:
 	if not enabled:
 		return
 

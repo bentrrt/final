@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dxyay37g0th3k"]
-
-[ext_resource type="ArrayMesh" uid="uid://bad77g3bs8pyq" path="res://models/split/Pedestal1.res" id="1_teb82"]
-
-[node name="Pedestal1" type="Node3D" unique_id=1462931670]
-
-[node name="Mesh" type="MeshInstance3D" parent="." unique_id=30860009]
-mesh = ExtResource("1_teb82")
