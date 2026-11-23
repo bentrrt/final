@@ -9,9 +9,11 @@ func _ready() -> void:
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	if carriage == null:
 		return null
-	var preview := Label.new()
-	preview.text = carriage.word
-	preview.add_theme_font_size_override("font_size", 20)
+	var preview := carriage.duplicate() as Control
+	preview.custom_minimum_size = Vector2(256, 64)
+	preview.size = Vector2(256, 64)
+	preview.modulate.a = 0.5
+	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	set_drag_preview(preview)
 	return {"slot": self}
 

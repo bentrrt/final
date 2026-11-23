@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cq55ql4gmx1qd" path="res://assets/Kooky - Pixel Train assets - v0.0.1/railtrack_v1.png" id="1_rail"]
 [ext_resource type="Script" uid="uid://dymh0xnnqndry" path="res://train_game.gd" id="2_script"]
 [ext_resource type="PackedScene" uid="uid://bk0d703oi6404" path="res://train.tscn" id="3_train"]
+[ext_resource type="PackedScene" uid="uid://256lg2yhu1m8" path="res://effects/glowing.tscn" id="4_s0p8f"]
+[ext_resource type="Texture2D" uid="uid://b1o31l3jsxa4a" path="res://assets/Basic_GUI_Bundle/Icons/Icon_Large_StarGrey.png" id="5_star_grey"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hint_panel"]
 bg_color = Color(0.08, 0.07, 0.13, 0.96)
@@ -70,6 +72,10 @@ region_rect = Rect2(0, 0, 320, 8)
 
 [node name="Train1" parent="Track1" unique_id=14399864 instance=ExtResource("3_train")]
 
+[node name="Node2D" parent="Track1" unique_id=1875081230 instance=ExtResource("4_s0p8f")]
+position = Vector2(1764.9999, 145.99998)
+scale = Vector2(10, 10)
+
 [node name="Track2" type="Node2D" parent="." unique_id=100000012]
 position = Vector2(0, 720)
 
@@ -133,16 +139,36 @@ offset_right = 1200.0
 offset_bottom = 152.0
 theme_override_font_sizes/font_size = 24
 
-[node name="StarLabel" type="Label" parent="HUD" unique_id=100000023]
-offset_left = 1660.0
+[node name="StarContainer" type="HBoxContainer" parent="HUD" unique_id=100000023]
+offset_left = 1600.0
 offset_top = 20.0
 offset_right = 1896.0
-offset_bottom = 56.0
-theme_override_font_sizes/font_size = 24
-text = "Stars: 0"
-horizontal_alignment = 2
+offset_bottom = 84.0
+theme_override_constants/separation = 8
+alignment = 2
 
-[node name="DepartButton" type="Button" parent="HUD" unique_id=100000024]
+[node name="Star1" type="TextureRect" parent="HUD/StarContainer" unique_id=100000024]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_star_grey")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Star2" type="TextureRect" parent="HUD/StarContainer" unique_id=348277179]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_star_grey")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Star3" type="TextureRect" parent="HUD/StarContainer" unique_id=100000026]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_star_grey")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DepartButton" type="Button" parent="HUD" unique_id=1543911209]
 offset_left = 1660.0
 offset_top = 980.0
 offset_right = 1896.0

@@ -10,12 +10,21 @@ var trains: Array = []
 var train_colors := [Color(0.23, 0.74, 0.78), Color(0.86, 0.32, 0.32)]
 var unified_color := Color(0.85, 0.72, 0.35)
 var mistakes := 0
+var stars := 0
 var hints_used := 0
 
 @onready var feedback: Label = $HUD/Feedback
 @onready var round_label: Label = $HUD/RoundLabel
 @onready var depart_button: Button = $HUD/DepartButton
+const STAR_GREY := preload("res://assets/Basic_GUI_Bundle/Icons/Icon_Large_StarGrey.png")
+const STAR_GOLD := preload("res://assets/Basic_GUI_Bundle/Icons/Icon_Large_Star.png")
+
+@onready var star1: TextureRect = $HUD/StarContainer/Star1
+@onready var star2: TextureRect = $HUD/StarContainer/Star2
+@onready var star3: TextureRect = $HUD/StarContainer/Star3
 @onready var train_nodes: Array = [$Track1/Train1, $Track2/Train2, $Track3/Train3]
+
+var star_nodes: Array = []
 
 @onready var hint_button: Button = $HUD/HintButton
 @onready var hint_overlay: Control = $HUD/HintOverlay
@@ -28,6 +37,8 @@ func _ready() -> void:
 	hint_button.pressed.connect(_show_tag_hints)
 	hint_dim.gui_input.connect(_on_hint_dim_input)
 	hint_close_button.pressed.connect(_hide_tag_hints)
+	star_nodes = [star1, star2, star3]
+	_reset_stars()
 	_start_round()
 
 func _load_json(path: String) -> Dictionary:
@@ -92,6 +103,13 @@ func _on_depart_pressed() -> void:
 		else:
 			train.mark_correct(unified_color)
 	if all_correct:
+		stars = min(stars + 1, 3)
+		if stars - 1 < star_nodes.size():
+			var star_node: TextureRect = star_nodes[stars - 1]
+			star_node.texture = STAR_GOLD
+			star_node.scale = Vector2(1.35, 1.35)
+			var star_tween := create_tween()
+			star_tween.tween_property(star_node, "scale", Vector2(1.0, 1.0), 0.25)
 		feedback.text = "All trains depart."
 		_depart_all()
 	else:
@@ -120,7 +138,15 @@ func _next_round() -> void:
 		if level_index >= data["levels"].size():
 			feedback.text = "Level complete."
 			return
+		stars = 0
+		_reset_stars()
 	_start_round()
+
+func _reset_stars() -> void:
+	stars = 0
+	for star_node in star_nodes:
+		star_node.texture = STAR_GREY
+		star_node.scale = Vector2(1.0, 1.0)
 
 func _show_tag_hints() -> void:
 	hint_overlay.visible = true
