@@ -3,16 +3,22 @@ extends HBoxContainer
 @export var carriage_textures: Array[Texture2D] = []
 
 @onready var slot_nodes: Array = [$Slot1, $Slot2, $Slot3, $Slot4, $Slot5]
+@onready var smoke: Sprite2D = $Loco/Smoke
+@onready var wheel_smoke: CPUParticles2D = $WheelSmoke
+
+var smoke_timer := 0.0
 
 var item: Dictionary = {}
 var train_color: Color
 var train_index: int = 0
+var fade_tags := false
 var slots: Array[TrainSlot] = []
 
-func setup(p_item: Dictionary, color: Color, index: int) -> void:
+func setup(p_item: Dictionary, color: Color, index: int, fade_tags: bool = false) -> void:
 	item = p_item
 	train_color = color
 	train_index = index
+	self.fade_tags = fade_tags
 	slots.clear()
 	var answer: Array = item["answer"]
 	var classes: Array = item["classes"]
@@ -27,7 +33,7 @@ func setup(p_item: Dictionary, color: Color, index: int) -> void:
 			var car: TrainCarriage = slot.carriage
 			car.visible = true
 			car.modulate = Color(1, 1, 1)
-			car.setup(pairs[i]["word"], pairs[i]["cls"], color, _carriage_texture(i))
+			car.setup(pairs[i]["word"], pairs[i]["cls"], color, _carriage_texture(i), fade_tags)
 			slots.append(slot)
 		else:
 			slot.visible = false
@@ -55,7 +61,6 @@ func words() -> Array:
 func mark_correct(color: Color) -> void:
 	for slot in slots:
 		if slot.carriage != null:
-			slot.carriage.set_unified(color)
 			slot.carriage.modulate = Color(1, 1, 1)
 
 func mark_wrong(index: int) -> void:
@@ -68,4 +73,19 @@ func reset_marks() -> void:
 	for slot in slots:
 		if slot.carriage != null:
 			slot.carriage.modulate = Color(1, 1, 1)
-			slot.carriage.stripe.color = slot.carriage.train_color
+
+func _process(delta: float) -> void:
+	if smoke == null:
+		return
+	smoke_timer += delta
+	if smoke_timer >= 0.08:
+		smoke_timer = 0.0
+		smoke.frame = (smoke.frame + 1) % 30
+
+func start_smoke() -> void:
+	if wheel_smoke != null:
+		wheel_smoke.emitting = true
+
+func stop_smoke() -> void:
+	if wheel_smoke != null:
+		wheel_smoke.emitting = false

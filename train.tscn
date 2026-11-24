@@ -12,7 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://drehlq4p5njbt" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car8.png" id="10_car8"]
 [ext_resource type="Texture2D" uid="uid://vgqw4sn2wb3k" path="res://assets/Kooky - Pixel Train assets - v0.0.1/carriage_v18_car9.png" id="11_car9"]
 [ext_resource type="PackedScene" path="res://slot.tscn" id="12_slot"]
-[ext_resource type="PackedScene" path="res://carriage.tscn" id="13_carriage"]
+[ext_resource type="PackedScene" uid="uid://gd4vm54ba4m2" path="res://carriage.tscn" id="13_carriage"]
+[ext_resource type="Texture2D" uid="uid://cy3okkd7f4don" path="res://assets/FishingWorld/Sunnyside_World_Assets/Elements/VFX/Chimney Smoke/chimneysmoke_01_strip30.png" id="14_smoke"]
 
 [node name="Train" type="HBoxContainer" unique_id=1046070560]
 offset_left = 60.0
@@ -27,34 +28,66 @@ carriage_textures = Array[Texture2D]([ExtResource("3_car1"), ExtResource("4_car2
 layout_mode = 2
 
 [node name="Carriage" parent="Slot1" unique_id=872197302 instance=ExtResource("13_carriage")]
-anchors_preset = 0
+layout_mode = 0
 
 [node name="Slot2" parent="." unique_id=527905947 instance=ExtResource("12_slot")]
 layout_mode = 2
 
 [node name="Carriage" parent="Slot2" unique_id=1191438776 instance=ExtResource("13_carriage")]
-anchors_preset = 0
+layout_mode = 0
 
 [node name="Slot3" parent="." unique_id=1170800024 instance=ExtResource("12_slot")]
 layout_mode = 2
 
 [node name="Carriage" parent="Slot3" unique_id=1354419141 instance=ExtResource("13_carriage")]
-anchors_preset = 0
+layout_mode = 0
 
 [node name="Slot4" parent="." unique_id=2064217176 instance=ExtResource("12_slot")]
 layout_mode = 2
 
 [node name="Carriage" parent="Slot4" unique_id=131752580 instance=ExtResource("13_carriage")]
-anchors_preset = 0
+layout_mode = 0
 
 [node name="Slot5" parent="." unique_id=1353901784 instance=ExtResource("12_slot")]
 layout_mode = 2
 
 [node name="Carriage" parent="Slot5" unique_id=1319112208 instance=ExtResource("13_carriage")]
-anchors_preset = 0
+layout_mode = 0
 
 [node name="Loco" type="TextureRect" parent="." unique_id=509598831]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_loco")
+
+[node name="Smoke" type="Sprite2D" parent="Loco" unique_id=509598832]
+position = Vector2(219, -31)
+scale = Vector2(2, 2)
+texture = ExtResource("14_smoke")
+hframes = 30
+
+[node name="WheelSmoke2" type="CPUParticles2D" parent="." unique_id=84975869]
+position = Vector2(1307.9999, 63.99999)
+rotation = 1.6897122
+emitting = false
+amount = 800
+lifetime = 0.32
+emission_shape = 1
+emission_sphere_radius = 8.62
+gravity = Vector2(-180, 0)
+angle_max = 476.7
+scale_amount_min = 8.0
+scale_amount_max = 8.0
+
+[node name="WheelSmoke" type="CPUParticles2D" parent="." unique_id=705298598]
+position = Vector2(599, 61.999992)
+rotation = -2.903761
+emitting = false
+amount = 800
+lifetime = 0.32
+emission_shape = 1
+emission_sphere_radius = 8.62
+gravity = Vector2(-180, 0)
+angle_max = 476.7
+scale_amount_min = 8.0
+scale_amount_max = 8.0

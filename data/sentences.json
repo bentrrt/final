@@ -53,6 +53,110 @@
           ]
         }
       ]
+    },
+    {
+      "id": "l2",
+      "title": "Level 2: Two trains",
+      "rounds": [
+        {
+          "trains": [
+            {
+              "answer": ["I", "like", "the", "park"],
+              "classes": ["pronoun", "verb", "article", "noun"],
+              "hint": "Who likes what?",
+              "explain": "The person comes first, then the action, then the thing."
+            },
+            {
+              "answer": ["She", "reads", "a", "book"],
+              "classes": ["pronoun", "verb", "article", "noun"],
+              "hint": "Who reads what?",
+              "explain": "The person comes first, then the action, then the thing."
+            }
+          ]
+        },
+        {
+          "trains": [
+            {
+              "answer": ["He", "runs", "to", "school"],
+              "classes": ["pronoun", "verb", "particle", "noun"],
+              "hint": "Who goes where?",
+              "explain": "The person comes first, then the action, then the place."
+            },
+            {
+              "answer": ["We", "eat", "at", "home"],
+              "classes": ["pronoun", "verb", "particle", "noun"],
+              "hint": "Who eats where?",
+              "explain": "The person comes first, then the action, then the place."
+            }
+          ]
+        },
+        {
+          "trains": [
+            {
+              "answer": ["They", "play", "in", "water"],
+              "classes": ["pronoun", "verb", "particle", "noun"],
+              "hint": "Who plays where?",
+              "explain": "The person comes first, then the action, then the place."
+            },
+            {
+              "answer": ["It", "is", "a", "cat"],
+              "classes": ["pronoun", "verb", "article", "noun"],
+              "hint": "What is it?",
+              "explain": "The thing comes first, then the action, then the name."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3",
+      "title": "Level 3: Three trains",
+      "rounds": [
+        {
+          "trains": [
+            {
+              "answer": ["The", "small", "dog", "runs", "home"],
+              "classes": ["article", "adjective", "noun", "verb", "particle"],
+              "hint": "Little word, describing word, naming word, action word, place word.",
+              "explain": "English order is: article, adjective, noun, verb, place."
+            },
+            {
+              "answer": ["She", "has", "a", "red", "bike"],
+              "classes": ["pronoun", "verb", "article", "adjective", "noun"],
+              "hint": "Who has what?",
+              "explain": "The person comes first, then the action, then the thing."
+            },
+            {
+              "answer": ["Put", "the", "big", "box", "down"],
+              "classes": ["verb", "article", "adjective", "noun", "particle"],
+              "hint": "Action first, then the thing.",
+              "explain": "The action comes first; the object follows it."
+            }
+          ]
+        },
+        {
+          "trains": [
+            {
+              "answer": ["I", "see", "a", "tall", "tree"],
+              "classes": ["pronoun", "verb", "article", "adjective", "noun"],
+              "hint": "Who sees what?",
+              "explain": "Who, then action, then what is seen."
+            },
+            {
+              "answer": ["He", "likes", "the", "blue", "train"],
+              "classes": ["pronoun", "verb", "article", "adjective", "noun"],
+              "hint": "Who likes what?",
+              "explain": "The person comes first, then the action, then the thing."
+            },
+            {
+              "answer": ["The", "old", "cat", "is", "small"],
+              "classes": ["article", "adjective", "noun", "verb", "adjective"],
+              "hint": "Little word, describing word, naming word, action word, describing word.",
+              "explain": "This is the same pattern as the first train."
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -7,7 +7,7 @@ var data: Dictionary = {}
 var level_index := 0
 var round_index := 0
 var trains: Array = []
-var train_colors := [Color(0.23, 0.74, 0.78), Color(0.86, 0.32, 0.32)]
+var train_colors := [Color(0.23, 0.74, 0.78), Color(0.86, 0.32, 0.32), Color(0.55, 0.45, 0.85)]
 var unified_color := Color(0.85, 0.72, 0.35)
 var mistakes := 0
 var stars := 0
@@ -75,7 +75,7 @@ func _start_round() -> void:
 		var train = train_nodes[i]
 		train.visible = true
 		train.position.x = TRAIN_START_X
-		train.setup(item, color, i)
+		train.setup(item, color, i, level_index == 2)
 		trains.append(train)
 	depart_button.disabled = false
 
@@ -130,13 +130,17 @@ func _on_depart_pressed() -> void:
 
 func _depart_all() -> void:
 	for train in trains:
+		if train.has_method("start_smoke"):
+			train.start_smoke()
 		var tween := create_tween()
-		tween.tween_property(train, "position:x", train.position.x + 2200, 0.9)
+		tween.tween_property(train, "position:x", train.position.x + 1800, 0.9)
 		tween.tween_callback(_finish_depart.bind(train))
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.2).timeout
 	_next_round()
 
 func _finish_depart(train) -> void:
+	if train.has_method("stop_smoke"):
+		train.stop_smoke()
 	train.visible = false
 	train.position.x = TRAIN_START_X
 

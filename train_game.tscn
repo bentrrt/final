@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cq55ql4gmx1qd" path="res://assets/Kooky - Pixel Train assets - v0.0.1/railtrack_v1.png" id="1_rail"]
 [ext_resource type="Script" uid="uid://dymh0xnnqndry" path="res://train_game.gd" id="2_script"]
 [ext_resource type="PackedScene" uid="uid://bk0d703oi6404" path="res://train.tscn" id="3_train"]
-[ext_resource type="PackedScene" uid="uid://256lg2yhu1m8" path="res://effects/glowing.tscn" id="4_s0p8f"]
 [ext_resource type="Texture2D" uid="uid://b1o31l3jsxa4a" path="res://assets/Basic_GUI_Bundle/Icons/Icon_Large_StarGrey.png" id="5_star_grey"]
 [ext_resource type="Texture2D" uid="uid://pbqpv56f737a" path="res://assets/Basic_GUI_Bundle/Icons/Icon_Large_Star.png" id="6_star_gold"]
 
@@ -72,10 +71,8 @@ region_enabled = true
 region_rect = Rect2(0, 0, 320, 8)
 
 [node name="Train1" parent="Track1" unique_id=14399864 instance=ExtResource("3_train")]
-
-[node name="Node2D" parent="Track1" unique_id=1875081230 instance=ExtResource("4_s0p8f")]
-position = Vector2(1764.9999, 145.99998)
-scale = Vector2(10, 10)
+offset_right = 1636.0
+offset_bottom = -22.0
 
 [node name="Track2" type="Node2D" parent="." unique_id=100000012]
 position = Vector2(0, 720)
