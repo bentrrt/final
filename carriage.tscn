@@ -19,14 +19,6 @@ offset_bottom = 64.0
 mouse_filter = 2
 texture = ExtResource("2_art")
 
-[node name="Stripe" type="ColorRect" parent="." unique_id=322514365]
-layout_mode = 0
-offset_top = 56.0
-offset_right = 256.0
-offset_bottom = 64.0
-mouse_filter = 2
-color = Color(0.23, 0.74, 0.78, 1)
-
 [node name="Plate" type="ColorRect" parent="." unique_id=1897320700]
 layout_mode = 0
 offset_left = 50.0

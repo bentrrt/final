@@ -2,7 +2,6 @@ class_name TrainCarriage
 extends Control
 
 @onready var art: TextureRect = $Art
-@onready var stripe: ColorRect = $Stripe
 @onready var tag: ColorRect = $Tag
 @onready var icon: Label = $Icon
 @onready var word_label: Label = $Word
@@ -11,18 +10,17 @@ var word: String = ""
 var word_class: String = ""
 var train_color: Color = Color(0.23, 0.74, 0.78)
 
-func setup(p_word: String, p_class: String, train_color: Color, tex: Texture2D) -> void:
+func setup(p_word: String, p_class: String, train_color: Color, tex: Texture2D, fade_tags: bool = false) -> void:
 	word = p_word
 	word_class = p_class
 	self.train_color = train_color
 	art.texture = tex
-	stripe.color = train_color
-	tag.color = class_color(p_class)
+	if fade_tags:
+		tag.color = Color(0.6, 0.6, 0.6)
+	else:
+		tag.color = class_color(p_class)
 	icon.text = class_icon(p_class)
 	word_label.text = p_word
-
-func set_unified(color: Color) -> void:
-	stripe.color = color
 
 func class_color(p_class: String) -> Color:
 	match p_class:
